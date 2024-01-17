@@ -1,0 +1,662 @@
+{
+    "name": "Nutrition Form",
+    "description": "Nutrition Form",
+    "version": "1",
+    "published": true,
+    "uuid": "xxxx",
+    "retired": false,
+    "encounter": "Consultation",
+    "pages": [
+      {
+        "label": "Visit Details",
+        "sections": [
+          {
+            "label": "Encounter Details",
+            "isExpanded": "true",
+            "questions": [
+              {
+                "label": "Visit date:",
+                "type": "encounterDatetime",
+                "required": "true",
+                "id": "encDate",
+                "questionOptions": {
+                  "rendering": "date"
+                },
+                "validators": [
+                  {
+                    "type": "date",
+                    "allowFutureDates": "false"
+                  }
+                ]
+              },
+              {
+                "label": "Provider:",
+                "type": "encounterProvider",
+                "questionOptions": {
+                  "rendering": "ui-select-extended"
+                },
+                "id": "encProvider "
+              },
+              {
+                "label": "Location:",
+                "type": "encounterLocation",
+                "questionOptions": {
+                  "rendering": "ui-select-extended"
+                },
+                "id": "encLocation"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "General Health Assessment",
+        "sections": [
+          {
+            "label": "General Health Assessment",
+            "isExpanded": "true",
+            "questions": [
+              {
+                "label": "Patient Pregnant/Lactating",
+                "type": "obs",
+                "id": "peGsTaTus",
+                "required": "true",
+                "questionOptions": {
+                  "concept": "5272AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                  "rendering": "radio",
+                  "answers": [
+                    {
+                      "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Yes"
+                    },
+                    {
+                      "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "No"
+                    },
+                    {
+                      "concept": "1175AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Not Applicable"
+                    }
+                  ]
+                },
+                "hide": {
+                  "hideWhenExpression": "age < 15 || sex !== 'F'"
+                }
+              },
+              {
+                "label": "Serostatus",
+                "type": "obs",
+                "id": "sErOsTaTus",
+                "required": "true",
+                "questionOptions": {
+                  "concept": "1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                  "rendering": "radio",
+                  "answers": [
+                    {
+                      "concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Positive"
+                    },
+                    {
+                      "concept": "664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Negative"
+                    },
+                    {
+                      "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Unknown"
+                    }
+                  ]
+                }
+              },
+              {
+                "label": "Coexisitng medical Condition",
+                "type": "obs",
+                "id": "exMedsCond",
+                "questionOptions": {
+                  "concept": "162747AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                  "rendering": "radio",
+                  "answers": [
+                    {
+                      "concept": "112141AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "TB"
+                    },
+                    {
+                      "concept": "119481AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Diabetes"
+                    },
+                    {
+                      "concept": "117399AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Hypertension"
+                    },
+                    {
+                      "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Others (Specify)"
+                    }
+                  ]
+                }
+              },
+              {
+                "label": "Other (Specify)",
+                "type": "obs",
+                "id": "SpecifYexMedsCond",
+                "questionOptions": {
+                  "concept": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                  "rendering": "text"
+                },
+                "validators": [],
+                "hide": {
+                  "hideWhenExpression": "exMedsCond !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                }
+              },
+              {
+                "label": "Patient has Edema",
+                "type": "obs",
+                "id": "pEdeMa",
+                "questionOptions": {
+                  "concept": "163894AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                  "rendering": "radio",
+                  "answers": [
+                    {
+                      "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Yes"
+                    },
+                    {
+                      "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "No"
+                    }
+                  ]
+                }
+              },
+              {
+                "label": "Patient's SAM/MAM",
+                "type": "obs",
+                "id": "pSAmAM",
+                "questionOptions": {
+                  "concept": "160205AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                  "rendering": "radio",
+                  "answers": [
+                    {
+                      "concept": "1687AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "1st Time Diagnosis"
+                    },
+                    {
+                      "concept": "160033AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Relapse"
+                    },
+                    {
+                      "concept": "1655AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Re-admission"
+                    }
+                  ]
+                }
+              },
+              {
+                "label": "Patient on ARVs",
+                "type": "obs",
+                "id": "paTonARVs",
+                "questionOptions": {
+                  "concept": "1149AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                  "rendering": "radio",
+                  "answers": [
+                    {
+                      "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Yes"
+                    },
+                    {
+                      "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "No"
+                    }
+                  ]
+                }
+              },
+              {
+                "label": "Anaemia levels",
+                "type": "obs",
+                "id": "anEamiAleV",
+                "questionOptions": {
+                  "concept": "121629AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                  "rendering": "select",
+                  "answers": [
+                    {
+                      "concept": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Not Done"
+                    },
+                    {
+                      "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Normal"
+                    },
+                    {
+                      "concept": "1498AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Mild"
+                    },
+                    {
+                      "concept": "1499AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Moderate"
+                    },
+                    {
+                      "concept": "1500AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Severe"
+                    }
+                  ]
+                }
+              },
+              {
+                "label": "Metabolic Disorders:",
+                "type": "obs",
+                "id": "meTDisorderS",
+                "questionOptions": {
+                  "concept": "163304AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                  "rendering": "checkbox",
+                  "answers": [
+                    {
+                      "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "None"
+                    },
+                    {
+                      "concept": "135761AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Lypodystrophy"
+                    },
+                    {
+                      "concept": "141623AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Dyslipidemia"
+                    },
+                    {
+                      "concept": "142473AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Type II Diabetes"
+                    }
+                  ]
+                }
+              },
+              {
+                "label": "Nutrition Intervention",
+                "type": "obs",
+                "id": "nutInterVene",
+                "questionOptions": {
+                  "concept": "163304AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                  "rendering": "radio",
+                  "answers": [
+                    {
+                      "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "First 0 - 6 Months"
+                    },
+                    {
+                      "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "6 - 12 Months"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Nutrition Assessment",
+        "sections": [
+          {
+            "label": "Nutrition Assessment",
+            "isExpanded": "true",
+            "questions": [
+              {
+                "label": "Critical Nutrition Practices",
+                "type": "obs",
+                "id": "critiQalNutrion",
+                "questionOptions": {
+                  "concept": "161005AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                  "rendering": "checkbox",
+                  "answers": [
+                    {
+                      "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "None"
+                    },
+                    {
+                      "concept": "163300AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Nutrition status assessment"
+                    },
+                    {
+                      "concept": "161648AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Dietary/Energy needs"
+                    },
+                    {
+                      "concept": "1906AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Sanitation"
+                    },
+                    {
+                      "concept": "135797AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Positive living behaviour"
+                    },
+                    {
+                      "concept": "159364AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Exercise"
+                    },
+                    {
+                      "concept": "154358AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Safe drinking water"
+                    },
+                    {
+                      "concept": "1611AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Prompt treatment for Opportunistic Infections"
+                    },
+                    {
+                      "concept": "164377AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Drug food interactions side effects"
+                    }
+                  ]
+                }
+              },
+              {
+                "label": "Therapeutic foods",
+                "type": "obs",
+                "id": "prActNutrion",
+                "questionOptions": {
+                  "concept": "161005AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                  "rendering": "checkbox",
+                  "answers": [
+                    {
+                      "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "None"
+                    },
+                    {
+                      "concept": "163394AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "RUTF"
+                    },
+                    {
+                      "concept": "163404AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "F-75"
+                    },
+                    {
+                      "concept": "163404AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "F-100"
+                    },
+                    {
+                      "concept": "141623AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Fiesmol"
+                    },
+                    {
+                      "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Others"
+                    }
+                  ]
+                }
+              },
+              {
+                "label": "Other (Specify)",
+                "type": "obs",
+                "id": "specifyNutFoods",
+                "questionOptions": {
+                  "concept": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                  "rendering": "text"
+                },
+                "validators": [],
+                "hide": {
+                  "hideWhenExpression": "!arrayContains(prActNutrion, ['5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'])"
+                }
+              },
+              {
+                "label": "Supplemental Foods:",
+                "type": "obs",
+                "id": "suppFooDs",
+                "questionOptions": {
+                  "concept": "159854AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                  "rendering": "checkbox",
+                  "answers": [
+                    {
+                      "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "None"
+                    },
+                    {
+                      "concept": "135761AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "FBF"
+                    },
+                    {
+                      "concept": "143369AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "CSB"
+                    },
+                    {
+                      "concept": "142473AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "RUSF"
+                    },
+                    {
+                      "concept": "162758AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Liquid nutrition supplements"
+                    },
+                    {
+                      "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Others"
+                    }
+                  ]
+                }
+              },
+              {
+                "label": "Other (Specify)",
+                "type": "obs",
+                "id": "specifySuppFoods",
+                "questionOptions": {
+                  "concept": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                  "rendering": "text"
+                },
+                "validators": [],
+                "hide": {
+                  "hideWhenExpression": "!arrayContains(suppFooDs, ['5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'])"
+                }
+              },
+              {
+                "label": "Micronutrients:",
+                "type": "obs",
+                "id": "micRoFooDs",
+                "questionOptions": {
+                  "concept": "159854AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                  "rendering": "checkbox",
+                  "answers": [
+                    {
+                      "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "None"
+                    },
+                    {
+                      "concept": "86339AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Vitamin A"
+                    },
+                    {
+                      "concept": "86343AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "B6"
+                    },
+                    {
+                      "concept": "461AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Multi-vitamins"
+                    },
+                    {
+                      "concept": "104677AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Iron-folate"
+                    },
+                    {
+                      "concept": "86672AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Zinc"
+                    },
+                    {
+                      "concept": "104300AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Multiple Micronutrients"
+                    },
+                    {
+                      "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Others"
+                    }
+                  ]
+                }
+              },
+              {
+                "label": "Other (Specify)",
+                "type": "obs",
+                "id": "specifymiCroFoods",
+                "questionOptions": {
+                  "concept": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                  "rendering": "text"
+                },
+                "validators": [],
+                "hide": {
+                  "hideWhenExpression": "!arrayContains(micRoFooDs, '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Other Nutrional Details",
+        "sections": [
+          {
+            "label": "Nutrition Details",
+            "isExpanded": "true",
+            "questions": [
+              {
+                "label": "Refer to patient card status of continuing SAM/MAM Patients:",
+                "type": "obs",
+                "id": "caRdStatUs",
+                "questionOptions": {
+                  "concept": "160205AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                  "rendering": "select",
+                  "answers": [
+                    {
+                      "concept": "5544AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Gaining Weight"
+                    },
+                    {
+                      "concept": "832AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Losing Weight"
+                    },
+                    {
+                      "concept": "128378AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Static Weight"
+                    },
+                    {
+                      "concept": "159791AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Cured"
+                    },
+                    {
+                      "concept": "1692AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Discharged"
+                    },
+                    {
+                      "concept": "163484AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Refused Nutri􀆟on Support"
+                    }
+                  ]
+                }
+              },
+              {
+                "label": "Referral and Transfers:",
+                "type": "obs",
+                "id": "referStatUs",
+                "questionOptions": {
+                  "concept": "161934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                  "rendering": "select",
+                  "answers": [
+                    {
+                      "concept": "5485AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Referral for inpatient care"
+                    },
+                    {
+                      "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Referral for other clinics"
+                    },
+                    {
+                      "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Referral for livelihood support"
+                    },
+                    {
+                      "concept": "159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Transferred"
+                    },
+                    {
+                      "concept": "160563AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Referred from other facili􀆟es"
+                    }
+                  ]
+                },
+                "hide": {
+                  "hideWhenExpression": ""
+                }
+              },
+              {
+                "label": "Next appointment date:",
+                "type": "obs",
+                "questionOptions": {
+                  "rendering": "date",
+                  "concept": "167132AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                },
+                "id": "tCAppoinTment",
+                "validators": [
+                  {
+                    "type": "date",
+                    "allowFutureDates": "true"
+                  },
+                  {
+                    "type": "js_expression",
+                    "failsWhenExpression": "(new moment(encDate)).isAfter((new moment(myValue)), 'day') || (new moment(encDate)).isSame((new moment(myValue)), 'day')",
+                    "message": "Next Appointment should be greater than the encounter date."
+                  }
+                ]
+              },
+              {
+                "label": "Cadre",
+                "type": "obs",
+                "id": "DesGniTionCadre",
+                "questionOptions": {
+                  "concept": "5619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                  "rendering": "radio",
+                  "answers": [
+                    {
+                      "concept": "135761AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Nutritionist"
+                    },
+                    {
+                      "concept": "1577AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Nurse"
+                    },
+                    {
+                      "concept": "162591AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Doctor"
+                    },
+                    {
+                      "concept": "1574AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Clinical Officer"
+                    },
+                    {
+                      "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Others"
+                    }
+                  ]
+                },
+                "hide": {
+                  "hideWhenExpression": ""
+                }
+              },
+              {
+                "label": "Other (Specify)",
+                "type": "obs",
+                "id": "specifyDesGate",
+                "questionOptions": {
+                  "concept": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                  "rendering": "text"
+                },
+                "validators": [],
+                "hide": {
+                  "hideWhenExpression": "DesGniTionCadre !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                }
+              },
+              {
+                "label": "Provider's Name:",
+                "type": "encounterProvider",
+                "questionOptions": {
+                  "rendering": "ui-select-extended"
+                },
+                "id": "ProviderSnAme",
+                "hide": {
+                  "hideWhenExpression": "isEmpty(DesGniTionCadre)"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "encounterType": "xxxxxx"
+  }

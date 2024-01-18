@@ -795,7 +795,11 @@
                     {
                       "concept": "162584AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                       "label": "WHZ"
-                    }
+                    },
+                    {
+                        "concept": "1342AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "BMI for Age"
+                      }
                   ]
                 },
                 "hide": {

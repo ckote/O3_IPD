@@ -953,7 +953,17 @@
                   "hideWhenExpression": "isEmpty(actionTaKen) || actionTaKen !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                 },
                 "questions": [
-                  {
+                    {
+                        "label": "Name of Medication",
+                        "type": "obs",
+                        "id": "medicatIonName",
+                        "required": "true",
+                        "questionOptions": {
+                          "concept": "164231AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                          "rendering": "text"
+                        }
+                      },
+                    {
                     "label": "Time Taken",
                     "type": "encounterDatetime",
                     "id": "TtakEn",
@@ -995,6 +1005,16 @@
                   "hideWhenExpression": "actionTaKenIVfluids !== 'true'"
                 },
                 "questions": [
+                    {
+                        "label": "Name of Fluid Given",
+                        "type": "obs",
+                        "id": "flUidName",
+                        "required": "true",
+                        "questionOptions": {
+                          "concept": "164231AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                          "rendering": "text"
+                        }
+                      },
                   {
                     "label": "Time Taken",
                     "type": "encounterDatetime",

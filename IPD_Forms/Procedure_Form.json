@@ -60,10 +60,10 @@
               "label": "Preoperative Diagnosis",
               "type": "obs",
               "id": "prEpDx",
-              "required": "true",
               "questionOptions": {
-                "concept": "166635AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                "rendering": "textarea"
+                "rendering": "repeating",
+                "dataSource": "diagnoses",
+                "rank": 1
               }
             },
             {
@@ -89,9 +89,10 @@
               "label": "Time Taken",
               "type": "encounterDatetime",
               "id": "TtakEn",
+              "datePickerFormat": "timer",
               "questionOptions": {
                 "concept": "a9e7c05e-7381-4e2b-a968-05d5d6a884f6",
-                "rendering": "ui-select-extended"
+                "rendering": "date"
               },
               "validators": [],
               "hide": {
@@ -105,8 +106,7 @@
               "required": "true",
               "questionOptions": {
                 "concept": "161931AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                "rendering": "multiCheckbox",
-                "answers": []
+                "rendering": "text"
               }
             },
             {
@@ -234,7 +234,7 @@
               }
             },
             {
-              "label": "Date and Time of Procedure",
+              "label": "Date of Procedure",
               "type": "encounterDatetime",
               "questionOptions": {
                 "rendering": "ui-select-extended",
@@ -254,6 +254,16 @@
               ]
             },
             {
+              "label": "Time Taken",
+              "type": "obs",
+              "id": "procTtakEn",
+              "datePickerFormat": "timer",
+              "questionOptions": {
+                "concept": "a9e7c05e-7381-4e2b-a968-05d5d6a884f6",
+                "rendering": "date"
+              }
+            },
+            {
               "label": "Operating Surgeon/Doctor's Name",
               "type": "obs",
               "id": "docTorsName",
@@ -267,7 +277,7 @@
               "type": "obs",
               "id": "AsstDoc",
               "questionOptions": {
-                "concept": "164141AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "concept": "159905AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                 "rendering": "text"
               }
             },
@@ -276,7 +286,7 @@
               "type": "obs",
               "questionOptions": {
                 "rendering": "text",
-                "concept": "1473AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                "concept": "164523AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
               },
               "id": "AssistDoc2"
             },
@@ -285,16 +295,16 @@
               "type": "obs",
               "questionOptions": {
                 "rendering": "text",
-                "concept": "1473AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                "concept": "166010AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
               },
               "id": "AssistDoc3"
             },
             {
-              "label": "Anastheologist name",
+              "label": "Anesthesiologist name",
               "type": "obs",
               "questionOptions": {
                 "rendering": "text",
-                "concept": "1473AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                "concept": "166689AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
               },
               "id": "AssistDoc4"
             },
@@ -304,22 +314,22 @@
               "id": "opsTech",
               "questionOptions": {
                 "rendering": "radio",
-                "concept": "159482AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "concept": "164258AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                 "answers": [
                   {
-                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "concept": "166715AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Open"
                   },
                   {
-                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "concept": "161789AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Minimal Invasive"
                   },
                   {
-                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "concept": "ece03e1b-9a31-4d72-8b93-376eb3180227",
                     "label": "Insufflation"
                   },
                   {
-                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "concept": "164648AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Semi closed"
                   }
                 ]
@@ -339,15 +349,15 @@
                   "type": "obs",
                   "id": "opsType2",
                   "questionOptions": {
-                    "concept": "166422AAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "concept": "163100AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "rendering": "radio",
                     "answers": [
                       {
-                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "concept": "3798940f-87b8-464e-b36a-17da246f034e",
                         "label": "Major Operation"
                       },
                       {
-                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "concept": "3c3946b1-d71d-41b3-a2e4-2d755006200a",
                         "label": "Minor Minor Operation"
                       }
                     ]
@@ -358,19 +368,19 @@
                   "type": "obs",
                   "id": "deathAge",
                   "questionOptions": {
-                    "concept": "163527AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "concept": "164254AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "rendering": "radio",
                     "answers": [
                       {
-                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "concept": "164243AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                         "label": "Inhalation"
                       },
                       {
-                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "concept": "164242AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                         "label": "Rectal"
                       },
                       {
-                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "concept": "164244AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                         "label": "I.V"
                       }
                     ]
@@ -381,27 +391,27 @@
                   "type": "obs",
                   "id": "loCalReg",
                   "questionOptions": {
-                    "concept": "160218AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "concept": "164253AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "rendering": "select",
                     "answers": [
                       {
-                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "concept": "166707AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                         "label": "Infiltration"
                       },
                       {
-                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "concept": "164250AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                         "label": "Topical"
                       },
                       {
-                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "concept": "160326AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                         "label": "Spinal"
                       },
                       {
-                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "concept": "161912AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                         "label": "Epidural"
                       },
                       {
-                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "concept": "124924AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                         "label": "Hypotherm"
                       }
                     ]
@@ -413,38 +423,38 @@
                   "id": "similarSymptom",
                   "questionOptions": {
                     "rendering": "select",
-                    "concept": "c67be9a5-f497-4082-af81-11753f65ed4b",
+                    "concept": "159633AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "answers": [
                       {
-                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "concept": "165928AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                         "label": "Prone Arms"
                       },
                       {
-                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "concept": "166306AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                         "label": "Flat shoulder"
                       },
                       {
-                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "concept": "1349AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                         "label": "Revtren"
                       },
                       {
-                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "concept": "1349AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                         "label": "Chest"
                       },
                       {
-                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "concept": "163995AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                         "label": "Lithotomy"
                       },
                       {
-                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "concept": "159629AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                         "label": "Supine"
                       },
                       {
-                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "concept": "542AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                         "label": "Lateral"
                       },
                       {
-                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "concept": "159631AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                         "label": "Trendelenburg"
                       }
                     ]
@@ -453,33 +463,25 @@
                 {
                   "label": "Fluids Given",
                   "type": "obs",
-                  "id": "familyHistoryChronic",
+                  "id": "fluiDsGiven",
                   "questionOptions": {
                     "rendering": "select",
-                    "concept": "160592AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "concept": "161911AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "answers": [
                       {
-                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "concept": "80804AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                         "label": "Saline"
                       },
                       {
-                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "concept": "162859AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                         "label": "Glucose"
                       },
                       {
-                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Plasma"
-                      },
-                      {
-                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "concept": "161927AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                         "label": "Blood"
                       },
                       {
-                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Plus subst"
-                      },
-                      {
-                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                         "label": "Others"
                       }
                     ]
@@ -495,7 +497,7 @@
                     "rendering": "text"
                   },
                   "hide": {
-                    "hideWhenExpression": "familyHistoryChronic !== ''"
+                    "hideWhenExpression": "fluiDsGiven !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                   }
                 },
                 {
@@ -504,7 +506,7 @@
                   "id": "dRainSused",
                   "required": "true",
                   "questionOptions": {
-                    "concept": "162696AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "concept": "166693AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "rendering": "radio",
                     "answers": [
                       {
@@ -522,49 +524,52 @@
                   "label": "Intraoperative complication",
                   "type": "obs",
                   "questionOptions": {
-                    "rendering": "multiCheckbox",
-                    "concept": "166570AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "rendering": "checkbox",
+                    "concept": "120198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "answers": [
                       {
                         "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                         "label": "None"
                       },
                       {
-                        "concept": "163565AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "concept": "1933AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                         "label": "Respiratory minor",
                         "disableWhenExpression": "myValue === '1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                       },
                       {
-                        "concept": "166606AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Respiratory minor"
+                        "concept": "127642AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Respiratory major",
+                        "disableWhenExpression": "myValue === '1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                       },
                       {
-                        "concept": "166517AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Respiratory major"
+                        "concept": "162158AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Neurology",
+                        "disableWhenExpression": "myValue === '1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                       },
                       {
-                        "concept": "166606AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Neurology"
+                        "concept": "123498AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Urology",
+                        "disableWhenExpression": "myValue === '1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                       },
                       {
-                        "concept": "166517AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Urology"
+                        "concept": "20d112d0-3811-41d6-935f-62de96a769bf",
+                        "label": "Ailment",
+                        "disableWhenExpression": "myValue === '1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                       },
                       {
-                        "concept": "166606AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Ailment"
+                        "concept": "5981AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Vomit",
+                        "disableWhenExpression": "myValue === '1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                       },
                       {
-                        "concept": "166517AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Vomit"
+                        "concept": "160925AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Metabolic",
+                        "disableWhenExpression": "myValue === '1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                       },
                       {
-                        "concept": "166606AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Metabolic"
-                      },
-                      {
-                        "concept": "166517AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Other"
+                        "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Other",
+                        "disableWhenExpression": "myValue === '1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                       }
                     ]
                   },
@@ -580,11 +585,11 @@
                   "id": "OthersUsed",
                   "required": "true",
                   "questionOptions": {
-                    "concept": "162696AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "concept": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "rendering": "text"
                   },
                   "hide": {
-                    "hideWhenExpression": "CompSopS !== ''"
+                    "hideWhenExpression": "!arrayContains(['5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], CompSopS)"
                   }
                 },
                 {
@@ -592,35 +597,35 @@
                   "type": "obs",
                   "questionOptions": {
                     "rendering": "multiCheckbox",
-                    "concept": "166570AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "concept": "120198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "answers": [
                       {
                         "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                         "label": "None"
                       },
                       {
-                        "concept": "163565AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "concept": "136117AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                         "label": "Laryngospasm",
                         "disableWhenExpression": "myValue === '1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                       },
                       {
-                        "concept": "166606AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "concept": "108AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                         "label": "Bronchospasm"
                       },
                       {
-                        "concept": "166517AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "concept": "137971AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                         "label": "Hypoventilation"
                       },
                       {
-                        "concept": "166606AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Apnoea"
+                        "concept": "148517AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Apnea"
                       },
                       {
-                        "concept": "166517AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "concept": "460AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                         "label": "Edema "
                       },
                       {
-                        "concept": "166606AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "concept": "121147AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                         "label": "Vocal cord paresis"
                       },
                       {
@@ -628,47 +633,51 @@
                         "label": "Hypotension "
                       },
                       {
-                        "concept": "166606AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "concept": "117399AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                         "label": "Hypertension"
                       },
                       {
-                        "concept": "166517AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "concept": "120148AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                         "label": "Arrhythmias"
                       },
                       {
-                        "concept": "166606AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "concept": "129341AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                         "label": "Shock"
                       },
                       {
-                        "concept": "166517AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "concept": "115432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                         "label": "Myocardial Infarction"
                       },
                       {
-                        "concept": "166606AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "concept": "117315AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                         "label": "Hypovolaemia"
                       },
                       {
-                        "concept": "166517AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "concept": "117326AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                         "label": "Hypothermia and Shivering"
                       },
                       {
-                        "concept": "166606AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "concept": "147241AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                         "label": "Late bleeding"
                       },
                       {
-                        "concept": "166517AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "concept": "138177AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Hyperthermia"
+                      },
+                      {
+                        "concept": "133473AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                         "label": "Postoperative nausea and vomiting "
                       },
                       {
-                        "concept": "166606AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "concept": "150309AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                         "label": "Central Anticholinergic Syndrome (CAS)"
                       },
                       {
-                        "concept": "166517AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "concept": "128195AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                         "label": "Psychomotor Agitation"
                       },
                       {
-                        "concept": "166517AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "concept": "148254AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                         "label": "Asystole"
                       }
                     ]
@@ -685,19 +694,19 @@
                   "id": "poStpTienOps",
                   "required": "true",
                   "questionOptions": {
-                    "concept": "162696AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "concept": "163184AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "rendering": "radio",
                     "answers": [
                       {
-                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "concept": "162133AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                         "label": "Satifactory"
                       },
                       {
-                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Guarded"
+                        "concept": "162132AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Poor"
                       },
                       {
-                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "concept": "166056AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                         "label": "Critical"
                       }
                     ]
@@ -709,7 +718,7 @@
                   "id": "BlOOdlOOs",
                   "required": "true",
                   "questionOptions": {
-                    "concept": "162696AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "concept": "161928AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "rendering": "number"
                   },
                   "hide": {
@@ -722,7 +731,7 @@
                   "id": "collecTeDspECS",
                   "required": "true",
                   "questionOptions": {
-                    "concept": "162696AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "concept": "159959AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "rendering": "radio",
                     "answers": [
                       {
@@ -742,7 +751,7 @@
                   "id": "BlOOdlOOs",
                   "required": "true",
                   "questionOptions": {
-                    "concept": "162696AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "concept": "163042AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "rendering": "textarea"
                   },
                   "hide": {
@@ -773,7 +782,7 @@
           "isExpanded": "true",
           "questions": [
             {
-              "label": "Date and time of surgery",
+              "label": "Date of surgery",
               "type": "encounterDatetime",
               "id": "surGeryDate",
               "questionOptions": {
@@ -785,11 +794,21 @@
               }
             },
             {
+              "label": "Time of surgery",
+              "type": "obs",
+              "id": "TtakEn",
+              "datePickerFormat": "timer",
+              "questionOptions": {
+                "concept": "163509AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "rendering": "date"
+              }
+            },
+            {
               "label": "Operative Procedure",
               "type": "obs",
               "id": "proCedureOps",
               "questionOptions": {
-                "concept": "166635AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "concept": "1651AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                 "rendering": "text"
               },
               "hide": {
@@ -802,7 +821,7 @@
               "id": "deTailSpRoc",
               "questionOptions": {
                 "rendering": "group",
-                "concept": "167266AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                "concept": "1651AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
               },
               "questions": [
                 {
@@ -810,7 +829,7 @@
                   "type": "obs",
                   "id": "loCalReg",
                   "questionOptions": {
-                    "concept": "160218AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "concept": "164254AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "rendering": "select",
                     "answers": [
                       {
@@ -896,11 +915,24 @@
                   }
                 },
                 {
+                  "label": "Other (Specify)",
+                  "type": "obs",
+                  "id": "OthersUsedposition",
+                  "required": "true",
+                  "questionOptions": {
+                    "concept": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "rendering": "text"
+                  },
+                  "hide": {
+                    "hideWhenExpression": "patIEntpoSItIon !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                  }
+                },
+                {
                   "label": "Location of Incision",
                   "type": "obs",
                   "id": "IncisLocaTion",
                   "questionOptions": {
-                    "concept": "167838AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "concept": "161011AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "rendering": "text"
                   }
                 },
@@ -909,7 +941,7 @@
                   "type": "obs",
                   "id": "IncisLocaTion",
                   "questionOptions": {
-                    "concept": "167838AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "concept": "b9879725-26f6-4aa4-8777-bc7f75d388c1",
                     "rendering": "select",
                     "answers": [
                       {
@@ -921,7 +953,7 @@
                         "label": "Pfannenstiel"
                       },
                       {
-                        "concept": "506AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "concept": "506AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                         "label": "Inguinal"
                       },
                       {
@@ -961,6 +993,19 @@
                         "label": "Other"
                       }
                     ]
+                  }
+                },
+                {
+                  "label": "Other (Specify)",
+                  "type": "obs",
+                  "id": "OthersUsedinCision",
+                  "required": "true",
+                  "questionOptions": {
+                    "concept": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "rendering": "text"
+                  },
+                  "hide": {
+                    "hideWhenExpression": "IncisLocaTion !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                   }
                 },
                 {
@@ -1052,6 +1097,16 @@
               },
               "hide": {
                 "hideWhenExpression": ""
+              }
+            },
+            {
+              "label": "Diagnosis",
+              "id": "DiagNosIS",
+              "type": "diagnosis",
+              "questionOptions": {
+                "rendering": "repeating",
+                "dataSource": "diagnoses",
+                "rank": 1
               }
             }
           ]

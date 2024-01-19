@@ -965,11 +965,12 @@
                   },
                   {
                     "label": "Time Taken",
-                    "type": "encounterDatetime",
+                    "type": "obs",
                     "id": "TtakEn",
+                    "datePickerFormat": "timer",
                     "questionOptions": {
                       "concept": "a9e7c05e-7381-4e2b-a968-05d5d6a884f6",
-                      "rendering": "ui-select-extended"
+                      "rendering": "date"
                     }
                   }
                 ]
@@ -1017,11 +1018,12 @@
                   },
                   {
                     "label": "Time Taken",
-                    "type": "encounterDatetime",
+                    "type": "obs",
                     "id": "fluiDsTtakEn",
+                    "datePickerFormat": "timer",
                     "questionOptions": {
                       "concept": "a9e7c05e-7381-4e2b-a968-05d5d6a884f6",
-                      "rendering": "ui-select-extended"
+                      "rendering": "date"
                     }
                   }
                 ]

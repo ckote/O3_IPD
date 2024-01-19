@@ -286,25 +286,29 @@
                   "rendering": "select",
                   "answers": [
                     {
-                      "concept": "1171AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Cesarean section(CS)"
-                    },
-                    {
-                      "concept": "1170AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Spontaneous vaginal delivery(SVD)"
-                    },
-                    {
-                      "concept": "1172AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Breech delivery"
-                    },
-                    {
-                      "concept": "159260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Vacuum extactor delivery"
-                    },
-                    {
-                      "concept": "159901AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Forceps delivery"
-                    }
+                        "concept": "1170AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Spontaneous vaginal delivery"
+                      },
+                      {
+                        "concept": "159260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "vacuum extractor delivery"
+                      },
+                      {
+                        "concept": "159901AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Forceps delivery"
+                      },
+                      {
+                        "concept": "1172AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Breech delivery"
+                      },
+                      {
+                        "concept": "155886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Elective Cesarean section"
+                      },
+                      {
+                        "concept": "159739AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Emergency Cesarean section"
+                      }
                   ]
                 },
                 "hide": {

@@ -214,7 +214,7 @@
                   {
                     "label": "Type of Incision",
                     "type": "obs",
-                    "id": "IncisLocaTion",
+                    "id": "typeIncisLocaTion",
                     "questionOptions": {
                       "concept": "b9879725-26f6-4aa4-8777-bc7f75d388c1",
                       "rendering": "select",

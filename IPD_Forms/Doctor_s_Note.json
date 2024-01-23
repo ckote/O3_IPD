@@ -1388,8 +1388,7 @@
                   "answers": [
                     {
                       "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "None",
-                      "disableWhenExpression": "myValue === '1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                      "label": "None"
                     },
                     {
                       "concept": "9fbf5c54-17cd-44d0-925e-b2c12c412c32",

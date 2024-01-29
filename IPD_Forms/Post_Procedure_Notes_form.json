@@ -74,7 +74,7 @@
                 "id": "TtakEn",
                 "datePickerFormat": "timer",
                 "questionOptions": {
-                  "concept": "163509AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                  "concept": "162869AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                   "rendering": "date"
                 }
               },
@@ -83,7 +83,7 @@
                 "type": "obs",
                 "id": "proCedureOps",
                 "questionOptions": {
-                  "concept": "1651AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                  "concept": "163393AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                   "rendering": "text"
                 },
                 "hide": {
@@ -108,27 +108,27 @@
                       "rendering": "select",
                       "answers": [
                         {
-                          "concept": "164243AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                          "concept": "164243AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                           "label": "Inhalation (mask) "
                         },
                         {
-                          "concept": "166991AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                          "concept": "166991AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                           "label": "Intravenous"
                         },
                         {
-                          "concept": "160326AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                          "concept": "160326AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                           "label": "Spinal"
                         },
                         {
-                          "concept": "161912AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                          "concept": "161912AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                           "label": "Epidural"
                         },
                         {
-                          "concept": "166707AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                          "concept": "166707AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                           "label": "Local Infiltration"
                         },
                         {
-                          "concept": "162777AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                          "concept": "162777AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                           "label": "Topical"
                         }
                       ]
@@ -143,15 +143,15 @@
                       "rendering": "select",
                       "answers": [
                         {
-                          "concept": "159629AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                          "concept": "159629AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                           "label": "Supine"
                         },
                         {
-                          "concept": "159631AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                          "concept": "159631AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                           "label": "Fowler’s"
                         },
                         {
-                          "concept": "165928AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                          "concept": "165928AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                           "label": "Prone"
                         },
                         {
@@ -159,31 +159,31 @@
                           "label": "Lateral"
                         },
                         {
-                          "concept": "141235AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                          "concept": "141235AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                           "label": "Trendelenburg"
                         },
                         {
-                          "concept": "164148AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                          "concept": "164148AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                           "label": "Reverse Trendelenburg"
                         },
                         {
-                          "concept": "163995AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                          "concept": "163995AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                           "label": "Lithotomy"
                         },
                         {
-                          "concept": "159630AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                          "concept": "159630AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                           "label": "Sitting"
                         },
                         {
-                          "concept": "165928AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                          "concept": "165928AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                           "label": "Jack-knife"
                         },
                         {
-                          "concept": "132675AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                          "concept": "132675AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                           "label": "Sim's Position"
                         },
                         {
-                          "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                          "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                           "label": "Other"
                         }
                       ]
@@ -252,7 +252,7 @@
                           "label": "McBurney"
                         },
                         {
-                          "concept": "1170AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                          "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                           "label": "Lanz"
                         },
                         {
@@ -288,11 +288,11 @@
                     "type": "obs",
                     "id": "clOseMethod",
                     "questionOptions": {
-                      "concept": "165241AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "concept": "c67be9a5-f497-4082-af81-11753f65ed4b",
                       "rendering": "select",
                       "answers": [
                         {
-                          "concept": "1925AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                          "concept": "1925AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                           "label": "Absorbable Suture"
                         },
                         {
@@ -312,9 +312,6 @@
                           "label": "Other"
                         }
                       ]
-                    },
-                    "hide": {
-                      "hideWhenExpression": ""
                     }
                   }
                 ]
@@ -324,7 +321,7 @@
                 "type": "obs",
                 "id": "FindingNotes",
                 "questionOptions": {
-                  "concept": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                  "concept": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                   "rendering": "textarea"
                 }
               },
@@ -333,7 +330,7 @@
                 "type": "obs",
                 "id": "HisToloGySpeci",
                 "questionOptions": {
-                  "concept": "161934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                  "concept": "161934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                   "rendering": "radio",
                   "answers": [
                     {
@@ -367,7 +364,7 @@
                 "type": "obs",
                 "id": "proceDureNotes",
                 "questionOptions": {
-                  "concept": "160303AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                  "concept": "160303AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                   "rendering": "textarea"
                 },
                 "hide": {

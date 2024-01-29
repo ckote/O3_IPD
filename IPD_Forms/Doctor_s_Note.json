@@ -1520,13 +1520,61 @@
                     },
                     {
                       "concept": "1692AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Discharge home"
+                      "label": "Discharge"
                     }
                   ]
                 },
                 "id": "referStO",
                 "hide": {
                   "hideWhenExpression": ""
+                }
+              },
+              {
+                "label": "Discharge status",
+                "type": "obs",
+                "required": true,
+                "id": "dischargeStatus",
+                "questionOptions": {
+                  "rendering": "select",
+                  "concept": "1695AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                  "conceptMappings": [
+                    {
+                      "relationship": "SAME-AS",
+                      "type": "SNOMED CT",
+                      "value": "309039003"
+                    },
+                    {
+                      "relationship": "SAME-AS",
+                      "type": "CIEL",
+                      "value": "1695"
+                    }
+                  ],
+                  "answers": [
+                    {
+                      "concept": "162677AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Cured"
+                    },
+                    {
+                      "concept": "160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Absconded"
+                    },
+                    {
+                      "concept": "1694AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Left against medical advice"
+                    },
+                    {
+                      "concept": "164165AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Referred to higher level facility"
+                    },
+                    {
+                      "concept": "159AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Deceased"
+                    }
+                  ]
+                },
+                "validators": [],
+                "hide": {
+                    "hideWhenExpression": "referStO !== '1692AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                 }
               },
               {

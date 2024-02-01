@@ -405,7 +405,7 @@
                     },
                     "validators": [],
                     "hide": {
-                      "hideWhenExpression": "cOmplaIntField !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                      "hideWhenExpression": "!isEmpty(cOmplaIntField) || cOmplaIntField !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                     }
                   },
                   {
@@ -1375,7 +1375,7 @@
                 },
                 "validators": [],
                 "hide": {
-                  "hideWhenExpression": "!arrayContaints(procedureOrderd, ['5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'])"
+                  "hideWhenExpression": "isEmpty(procedureOrderd) || !arrayContains(['5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], procedureOrderd)"
                 }
               },
               {
@@ -1431,7 +1431,7 @@
                 },
                 "validators": [],
                 "hide": {
-                  "hideWhenExpression": "!arrayContaints(theRapyOrdered, ['5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'])"
+                  "hideWhenExpression": "isEmpty(theRapyOrdered) || !arrayContains(['5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], theRapyOrdered)"
                 }
               },
               {
@@ -1487,7 +1487,7 @@
                 },
                 "validators": [],
                 "hide": {
-                  "hideWhenExpression": "!arrayContaints(feedOrders, ['5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'])"
+                  "hideWhenExpression": "isEmpty(feedOrders) || !arrayContains(['5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], feedOrders)"
                 }
               },
               {

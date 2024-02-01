@@ -689,7 +689,7 @@
                 },
                 "validators": [],
                 "hide": {
-                  "hideWhenExpression": "!arrayContains(micRoFooDs, '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
+                  "hideWhenExpression": "!arrayContains(micRoFooDs, ['5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'])"
                 }
               }
             ]

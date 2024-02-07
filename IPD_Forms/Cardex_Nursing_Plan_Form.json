@@ -86,7 +86,7 @@
                   {
                     "label": "Alcohol Use?",
                     "type": "obs",
-                    "id": "tobaCCoUse",
+                    "id": "alCoCoUse",
                     "questionOptions": {
                       "concept": "159449AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                       "rendering": "radio",
@@ -1029,6 +1029,139 @@
                       "concept": "a9e7c05e-7381-4e2b-a968-05d5d6a884f6",
                       "rendering": "date"
                     }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Nursing Care Plan",
+        "sections": [
+          {
+            "label": "Nurse's Care Plan",
+            "isExpanded": "true",
+            "questions": [
+              {
+                "label": "Care Plan Details",
+                "type": "obsGroup",
+                "questionOptions": {
+                  "rendering": "group",
+                  "concept": "160531AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                },
+                "questions": [
+                  {
+                    "label": "Patient's Ward Name",
+                    "type": "obs",
+                    "id": "pwaRdName",
+                    "questionInfo": "",
+				            "default": "",
+				            "questionOptions": {
+				              "rendering": "select",
+				              "identifierType": "fd57aabc-200a-4fdc-8150-41d1f53e5d9d"
+				              }
+                  },
+                  {
+                    "label": "Patient's Ward Number",
+                    "type": "obs",
+                    "id": "pwaDdNumer",
+                    "questionOptions": {
+                      "concept": "1639AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "rendering": "number"
+                    }
+                  },
+                  {
+                    "label": "Patient's Bed Number",
+                    "type": "obs",
+                    "id": "bedNumber",
+                    "questionOptions": {
+                      "concept": "165416AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "rendering": "number"
+                    }
+                  },
+                  {
+                    "label": "Assessment Date:",
+                    "type": "obs",
+                    "id": "assEsDate",
+                    "questionOptions": {
+                      "concept": "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "rendering": "date"
+                    },
+                    "validators": [
+                      {
+                        "type": "date",
+                        "allowFutureDates": "false"
+                      },
+                      {
+                        "type": "js_expression",
+                        "failsWhenExpression": "(new moment(encDate)).isBefore((new moment(myValue)), 'day')",
+                        "message": "Assessment date should not be greater than the encounter date."
+                      }
+                    ]
+                  },
+                  {
+                    "label": "Nursing Diagnosis",
+                    "id": "DiagNosIS",
+                    "type": "diagnosis",
+                    "questionOptions": {
+                      "rendering": "repeating",
+                      "dataSource": "diagnoses",
+                      "rank": 1
+                    }
+                  },
+                  {
+                    "label": "Expected Goal/Objective",
+                    "type": "obs",
+                    "id": "goAlNotes",
+                    "questionOptions": {
+                      "concept": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "rendering": "textarea"
+                    }
+                  },
+                  {
+                    "label": "Expected Outcome",
+                    "type": "obs",
+                    "id": "ouTcomeNotes",
+                    "questionOptions": {
+                      "concept": "162145AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "rendering": "textarea"
+                    }
+                  },
+                  {
+                    "label": "Nursing Interventions/Implementation Notes",
+                    "type": "obs",
+                    "id": "interVenEnoteS",
+                    "questionOptions": {
+                      "concept": "162165AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "rendering": "textarea"
+                    }
+                  },
+                  {
+                    "label": "Rationale Notes",
+                    "type": "obs",
+                    "id": "RatioNaleNotes",
+                    "questionOptions": {
+                      "concept": "166467AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "rendering": "textarea"
+                    }
+                  },
+                  {
+                    "label": "Evaluation Notes",
+                    "type": "obs",
+                    "id": "EvaLuTioNotes",
+                    "questionOptions": {
+                      "concept": "163756AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "rendering": "textarea"
+                    }
+                  },
+                  {
+                    "label": "Nurse's Name",
+                    "type": "encounterProvider",
+                    "questionOptions": {
+                      "rendering": "ui-select-extended"
+                    },
+                    "id": "NursesNameSign"
                   }
                 ]
               }

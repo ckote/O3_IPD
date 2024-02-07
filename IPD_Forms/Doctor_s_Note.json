@@ -1595,7 +1595,10 @@
                     "failsWhenExpression": "(new moment(encDate)).isAfter((new moment(myValue)), 'day') || (new moment(encDate)).isSame((new moment(myValue)), 'day')",
                     "message": "Next Appointment should be greater than the encounter date."
                   }
-                ]
+                ],
+                  "hide": {
+                        "hideWhenExpression": "dischargeStatus !== '162677AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || referStO === '164165AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                  }
               }
             ]
           }

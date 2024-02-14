@@ -1,625 +1,671 @@
 {
-    "name": "Family Planning",
-    "description": "Family Planning Form",
-    "version": "1",
-    "published": true,
-    "uuid": "xxxx",
-    "retired": false,
-    "encounter": "IPD Consultation",
-    "pages": [
-      {
-        "label": "Visit Details",
-        "sections": [
-          {
-            "label": "Encounter Details",
-            "isExpanded": "true",
-            "questions": [
-              {
-                "label": "Visit date:",
-                "type": "encounterDatetime",
-                "required": "true",
-                "id": "encDate",
-                "questionOptions": {
-                  "rendering": "date"
-                },
-                "validators": [
+  "name": "Family Planning Test 2",
+  "description": "Family Planning Form",
+  "version": "1",
+  "published": true,
+  "uuid": "0fc7d516-3743-4b53-aa3d-d3dcad9a1dbf",
+  "retired": false,
+  "encounter": "IPD Consultation",
+  "pages": [
+    {
+      "label": "Visit Details",
+      "sections": [
+        {
+          "label": "Encounter Details",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Visit date:",
+              "type": "encounterDatetime",
+              "required": "true",
+              "id": "encDate",
+              "questionOptions": {
+                "rendering": "date"
+              },
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+                }
+              ]
+            },
+            {
+              "label": "Provider:",
+              "type": "encounterProvider",
+              "questionOptions": {
+                "rendering": "ui-select-extended"
+              },
+              "id": "encProvider "
+            },
+            {
+              "label": "Location:",
+              "type": "encounterLocation",
+              "questionOptions": {
+                "rendering": "ui-select-extended"
+              },
+              "id": "encLocation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Family Planning Methods",
+      "sections": [
+        {
+          "label": "Family Planning Status",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Visit Type?",
+              "type": "obs",
+              "required": true,
+              "id": "visitType",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "164181AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
                   {
-                    "type": "date",
-                    "allowFutureDates": "false"
+                    "relationship": "SAME-AS",
+                    "type": "CIEL",
+                    "value": "164181"
+                  }
+                ],
+                "answers": [
+                  {
+                    "concept": "164180AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "New visit"
+                  },
+                  {
+                    "concept": "160530AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Return Visit"
+                  }
+                ]
+              }
+            },
+            {
+              "label": "Family Planning Status :",
+              "type": "obs",
+              "id": "fPlanning",
+              "questionOptions": {
+                "concept": "160653AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "rendering": "select",
+                "answers": [
+                  {
+                    "concept": "965AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "On Family Planning"
+                  },
+                  {
+                    "concept": "160652AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Not using Family Planning"
+                  },
+                  {
+                    "concept": "1360AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Wants Family Planning"
                   }
                 ]
               },
-              {
-                "label": "Provider:",
-                "type": "encounterProvider",
-                "questionOptions": {
-                  "rendering": "ui-select-extended"
-                },
-                "id": "encProvider "
-              },
-              {
-                "label": "Location:",
-                "type": "encounterLocation",
-                "questionOptions": {
-                  "rendering": "ui-select-extended"
-                },
-                "id": "encLocation"
+              "hide": {
+                "hideWhenExpression": ""
               }
-            ]
-          }
-        ]
-      },
-      {
-        "label": "Family Planning Methods",
-        "sections": [
-          {
-            "label": "Family Planning Status",
-            "isExpanded": "true",
-            "questions": [
-              {
-                "label": "Visit Type?",
-                "type": "obs",
-                "required": true,
-                "id": "visitType",
-                "questionOptions": {
-                  "rendering": "radio",
-                  "concept": "164181AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                  "conceptMappings": [
-                    {
-                      "relationship": "SAME-AS",
-                      "type": "CIEL",
-                      "value": "164181"
-                    }
-                  ],
-                  "answers": [
-                    {
-                      "concept": "164180AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "New visit"
-                    },
-                    {
-                      "concept": "160530AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Return Visit"
-                    }
-                  ]
-                }
-              },
-              {
-                "label": "Family Planning Status :",
-                "type": "obs",
-                "id": "fPlanning",
-                "questionOptions": {
-                  "concept": "160653AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                  "rendering": "select",
-                  "answers": [
-                    {
-                      "concept": "965AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "On Family Planning"
-                    },
-                    {
-                      "concept": "160652AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Not using Family Planning"
-                    },
-                    {
-                      "concept": "1360AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Wants Family Planning"
-                    }
-                  ]
-                },
-                "hide": {
-                  "hideWhenExpression": ""
-                }
-              },
-              {
-                "label": "If currently using Family Planning, or wants Family Planning, specify which method(s)",
-                "required": "true",
-                "type": "obs",
-                "questionOptions": {
-                  "rendering": "checkbox",
-                  "concept": "374AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                  "answers": [
-                    {
-                      "concept": "160570AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Emergency contraceptive pills"
-                    },
-                    {
-                      "concept": "780AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Oral Contraceptives Pills"
-                    },
-                    {
-                      "concept": "5279AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Injectible"
-                    },
-                    {
-                      "concept": "1359AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Implant"
-                    },
-                    {
-                      "concept": "5275AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Intrauterine Device"
-                    },
-                    {
-                      "concept": "136163AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Lactational Amenorhea Method"
-                    },
-                    {
-                      "concept": "5278AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Diaphram/Cervical Cap"
-                    },
-                    {
-                      "concept": "5277AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Fertility Awareness"
-                    },
-                    {
-                      "concept": "1472AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Tubal Ligation"
-                    },
-                    {
-                      "concept": "190AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Condoms"
-                    },
-                    {
-                      "concept": "1489AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Vasectomy(Partner)"
-                    }
-                  ]
-                },
-                "validators": [],
-                "hide": {
-                  "hideWhenExpression": "age < 15 || sex !=='F'"
-                },
-                "id": "fpMethod"
-              },
-              {
-                "label": "Type of Oral contraceptive pills provided",
-                "type": "obs",
-                "id": "pillTypeOral",
-                "questionOptions": {
-                  "concept": "423c034e-14ac-4243-ae75-80d1daddce55",
-                  "rendering": "radio",
-                  "answers": [
-                    {
-                      "concept": "164144AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Combined oral contraceptive pills"
-                    },
-                    {
-                      "concept": "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Progestrone only pills"
-                    }
-                  ]
-                },
-                "hide": {
-                  "hideWhenExpression": "isEmpty(fpMethod) || !arrayContains(fpMethod, ['780AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'])"
-                }
-              },
-              {
-                "label": "Type of Injectable provided",
-                "type": "obs",
-                "id": "injectYpEs",
-                "questionOptions": {
-                  "concept": "1272AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                  "rendering": "radio",
-                  "answers": [
-                    {
-                      "concept": "907AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "DMPA-IM"
-                    },
-                    {
-                      "concept": "79494AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "DMPA-SC"
-                    }
-                  ]
-                },
-                "hide": {
-                  "hideWhenExpression": "isEmpty(fpMethod) || !arrayContains(fpMethod, ['5279AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'])"
-                }
-              },
-              {
-                "label": "Type of Implant provided",
-                "type": "obs",
-                "id": "imPlanType",
-                "questionOptions": {
-                  "concept": "166866AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                  "rendering": "radio",
-                  "answers": [
-                    {
-                      "concept": "76022AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Implanon"
-                    },
-                    {
-                      "concept": "1873AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Jadelle"
-                    }
-                  ]
-                },
-                "hide": {
-                  "hideWhenExpression": "isEmpty(fpMethod) || !arrayContains(fpMethod, ['1359AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'])"
-                }
-              },
-              {
-                "label": "Implant service provided during visit",
-                "type": "obs",
-                "id": "imPlanMethod",
-                "questionOptions": {
-                  "concept": "164515AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                  "rendering": "select",
-                  "answers": [
-                    {
-                      "concept": "164180AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "1st time insertion"
-                    },
-                    {
-                      "concept": "164161AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Removal"
-                    },
-                    {
-                      "concept": "5424AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Re-insertion"
-                    },
-                    {
-                      "concept": "165348AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Check-Up"
-                    }
-                  ]
-                },
-                "hide": {
-                  "hideWhenExpression": "isEmpty(imPlanType)"
-                }
-              },
-              {
-                "label": "Type of IUD provided",
-                "type": "obs",
-                "id": "iUdType",
-                "questionOptions": {
-                  "concept": "b39992a0-7d5b-4b72-b551-9e0970ae49fa",
-                  "rendering": "radio",
-                  "answers": [
-                    {
-                      "concept": "165464AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Hormonal"
-                    },
-                    {
-                      "concept": "162794AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Non-Hormonal"
-                    }
-                  ]
-                },
-                "hide": {
-                  "hideWhenExpression": "isEmpty(fpMethod) || !arrayContains(fpMethod, ['5275AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'])"
-                }
-              },
-              {
-                "label": "Quantity Dispensed",
-                "type": "obs",
-                "id": "qTyDisP",
-                "questionOptions": {
-                  "concept": "1443AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                  "rendering": "number"
-                },
-                "hide": {
-                  "hideWhenExpression": "isEmpty(pillTypeOral) || isEmpty(injectYpEs) || isEmpty(imPlanType) || !arrayContains(fpMethod, ['160570AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA']) || !arrayContains(fpMethod, ['190AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'])"
-                }
-              },
-              {
-                "label": "Date Started:",
-                "type": "obs",
-                "required": "true",
-                "id": "encDate",
-                "questionOptions": {
-                  "concept": "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                  "rendering": "date"
-                },
-                "validators": [
+            },
+            {
+              "label": "If currently using Family Planning, or wants Family Planning, specify which method(s)",
+              "required": "true",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "checkbox",
+                "concept": "374AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "answers": [
                   {
-                    "type": "date",
-                    "allowFutureDates": "false"
+                    "concept": "160570AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Emergency contraceptive pills"
+                  },
+                  {
+                    "concept": "780AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Oral Contraceptives Pills"
+                  },
+                  {
+                    "concept": "5279AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Injectible"
+                  },
+                  {
+                    "concept": "1359AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Implant"
+                  },
+                  {
+                    "concept": "5275AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Intrauterine Device"
+                  },
+                  {
+                    "concept": "136163AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Lactational Amenorhea Method"
+                  },
+                  {
+                    "concept": "5278AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Diaphram/Cervical Cap"
+                  },
+                  {
+                    "concept": "5277AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Fertility Awareness"
+                  },
+                  {
+                    "concept": "1472AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Tubal Ligation"
+                  },
+                  {
+                    "concept": "190AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Condoms"
+                  },
+                  {
+                    "concept": "1489AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Vasectomy(Partner)"
                   }
-                ],
-                "hide": {
-                  "hideWhenExpression": "age < 15 || sex !=='F'"
-                }
+                ]
               },
-              {
-                "label": "Reason for not using Family Planning Methods",
-                "type": "obs",
-                "id": "FnotOnFp",
-                "questionOptions": {
-                  "rendering": "checkbox",
-                  "concept": "160575AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                  "answers": [
-                    {
-                      "concept": "160572AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Thinks can't get pregnant"
-                    },
-                    {
-                      "concept": "159524AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Not sexually active now"
-                    },
-                    {
-                      "concept": "160572AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Wants to get pregnant"
-                    },
-                    {
-                      "concept": "159524AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Menopause"
-                    },
-                    {
-                      "concept": "160572AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Health Concerns"
-                    },
-                    {
-                      "concept": "159524AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Fears of side Effects"
-                    },
-                    {
-                      "concept": "159524AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Religious prohibition"
-                    },
-                    {
-                      "concept": "159524AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Hysterectomy"
-                    },
-                    {
-                      "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Other"
-                    }
-                  ]
-                },
-                "hide": {
-                  "hideWhenExpression": "age < 15 || sex !=='F'"
-                }
+              "validators": [],
+              "hide": {
+                "hideWhenExpression": "isEmpty(fPlanning) || age < 15 || sex !=='F' || fPlanning === '160652AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
-              {
-                "label": "Other (Specify)",
-                "type": "obs",
-                "questionOptions": {
-                  "rendering": "text",
-                  "concept": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                },
-                "id": "otherFeMale",
-                "hide": {
-                  "hideWhenExpression": "isEmpty(FnotOnFp) && FnotOnFp !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || mEnoPauSe !=='1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || pregnancyIntention !=='1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || age < 15 || sex !=='F'"
-                }
+              "id": "fpMethod"
+            },
+            {
+              "label": "Type of Oral contraceptive pills provided",
+              "type": "obs",
+              "id": "pillTypeOral",
+              "questionOptions": {
+                "concept": "423c034e-14ac-4243-ae75-80d1daddce55",
+                "rendering": "radio",
+                "answers": [
+                  {
+                    "concept": "164144AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Combined oral contraceptive pills"
+                  },
+                  {
+                    "concept": "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Progestrone only pills"
+                  }
+                ]
               },
-              {
-                "label": "Family Planning Status :",
-                "type": "obs",
-                "id": "MalefPlanning",
-                "questionOptions": {
-                  "concept": "160653AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                  "rendering": "select",
-                  "answers": [
-                    {
-                      "concept": "965AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "On Family Planning"
-                    },
-                    {
-                      "concept": "160652AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Not using Family Planning"
-                    },
-                    {
-                      "concept": "1360AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Wants Family Planning"
-                    }
-                  ]
-                },
-                "hide": {
-                  "hideWhenExpression": "age < 15 || sex !=='M'"
-                }
-              },
-              {
-                "label": "If currently using Family Planning, or wants Family Planning, specify which method(s)",
-                "required": "true",
-                "type": "obs",
-                "questionOptions": {
-                  "rendering": "checkbox",
-                  "concept": "374AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                  "answers": [
-                    {
-                      "concept": "190AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Condoms"
-                    },
-                    {
-                      "concept": "1489AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Vasectomy"
-                    }
-                  ]
-                },
-                "validators": [],
-                "hide": {
-                  "hideWhenExpression": "age < 15 || sex !=='M'"
-                },
-                "id": "MalefpMethod"
-              },
-              {
-                "label": "Reason for not using Family Planning Methods",
-                "type": "obs",
-                "id": "notOnFpMale",
-                "questionOptions": {
-                  "rendering": "checkbox",
-                  "concept": "160575AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                  "answers": [
-                    {
-                      "concept": "159524AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Not sexually active"
-                    },
-                    {
-                      "concept": "160572AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Health Concerns"
-                    },
-                    {
-                      "concept": "159524AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Fears of side Effects"
-                    },
-                    {
-                      "concept": "159524AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Religious prohibition"
-                    },
-                    {
-                      "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Other"
-                    }
-                  ]
-                },
-                "hide": {
-                  "hideWhenExpression": "MalefPlanning !== '160652AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || age < 15 || sex !=='M'"
-                }
-              },
-              {
-                "label": "Other (Specify)",
-                "type": "obs",
-                "questionOptions": {
-                  "rendering": "text",
-                  "concept": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                },
-                "id": "otheRmaLe",
-                "hide": {
-                  "hideWhenExpression": "isEmpty(notOnFpMale) && notOnFpMale !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || age < 15 || sex !=='M'"
-                }
-              },
-              {
-                "label": "Counselled for Natural FP",
-                "type": "obs",
-                "id": "natuReFP",
-                "questionOptions": {
-                  "concept": "1255AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                  "rendering": "radio",
-                  "answers": [
-                    {
-                      "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Yes"
-                    },
-                    {
-                      "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "No"
-                    }
-                  ]
-                },
-                "hide": {
-                  "hideWhenExpression": ""
-                }
-              },
-              {
-                "label": "Circle beads given?",
-                "type": "obs",
-                "id": "cirCleBeadS",
-                "questionOptions": {
-                  "concept": "160643AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                  "rendering": "radio",
-                  "answers": [
-                    {
-                      "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Yes"
-                    },
-                    {
-                      "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "No"
-                    }
-                  ]
-                },
-                "hide": {
-                  "hideWhenExpression": "age < 15 || sex !=='F'"
-                }
-              },
-              {
-                "label": "Reasons for changing contraceptive",
-                "type": "obs",
-                "id": "cHangeoFP",
-                "questionOptions": {
-                  "rendering": "select",
-                  "concept": "159935AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                  "answers": [
-                    {
-                      "concept": "159524AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Side effects"
-                    },
-                    {
-                      "concept": "160572AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Health Concerns"
-                    },
-                    {
-                      "concept": "159524AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Cost and accessibility"
-                    },
-                    {
-                      "concept": "159524AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Lifestyle changes(travel, work, relationship)"
-                    },
-                    {
-                      "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Other"
-                    }
-                  ]
-                },
-                "hide": {
-                  "hideWhenExpression": "isEmpty(visitType) || visitType !== '160530AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || fPlanning !== '965AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || MalefPlanning !== '965AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || age < 15"
-                }
-              },
-              {
-                "label": "Other (Specify)",
-                "type": "obs",
-                "questionOptions": {
-                  "rendering": "text",
-                  "concept": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                },
-                "id": "otheRChangeFP",
-                "hide": {
-                  "hideWhenExpression": "isEmpty(cHangeoFP) && cHangeoFP !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || age < 15"
-                }
-              },
-              {
-                "label": "Reasons for lONG lasting contraceptive (LARC) Removal",
-                "type": "obs",
-                "id": "reMoValFP",
-                "questionOptions": {
-                  "rendering": "select",
-                  "concept": "162760AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                  "answers": [
-                    {
-                      "concept": "159524AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Maturity"
-                    },
-                    {
-                      "concept": "160572AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Desire to concieve"
-                    },
-                    {
-                      "concept": "163296AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Health concerns/side effects "
-                    },
-                    {
-                      "concept": "159524AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Method switch"
-                    },
-                    {
-                      "concept": "160693AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Method failure"
-                    },
-                    {
-                      "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Other"
-                    }
-                  ]
-                },
-                "hide": {
-                  "hideWhenExpression": "isEmpty(visitType) || visitType !== '160530AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || fPlanning !== '965AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || age < 15 || sex !=='F'"
-                }
-              },
-              {
-                "label": "Other (Specify)",
-                "type": "obs",
-                "questionOptions": {
-                  "rendering": "text",
-                  "concept": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                },
-                "id": "otheRChangeFP",
-                "hide": {
-                  "hideWhenExpression": "isEmpty(reMoValFP) && reMoValFP !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || age < 15"
-                }
+              "hide": {
+                "hideWhenExpression": "isEmpty(fpMethod) || !arrayContains(['780AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], fpMethod) || fPlanning === '160652AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               }
-            ]
-          }
-        ]
-      }
-    ],
-    "encounterType": "xxxxxx"
-  }
+            },
+            {
+              "label": "Type of Injectable provided",
+              "type": "obs",
+              "id": "injectYpEs",
+              "questionOptions": {
+                "concept": "1272AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "rendering": "radio",
+                "answers": [
+                  {
+                    "concept": "907AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "DMPA-IM"
+                  },
+                  {
+                    "concept": "79494AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "DMPA-SC"
+                  }
+                ]
+              },
+              "hide": {
+                "hideWhenExpression": "isEmpty(fpMethod) || !arrayContains(['5279AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], fpMethod) || fPlanning === '160652AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              }
+            },
+            {
+              "label": "Type of Implant provided",
+              "type": "obs",
+              "id": "imPlanType",
+              "questionOptions": {
+                "concept": "166866AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "rendering": "radio",
+                "answers": [
+                  {
+                    "concept": "76022AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Implanon"
+                  },
+                  {
+                    "concept": "1873AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Jadelle"
+                  }
+                ]
+              },
+              "hide": {
+                "hideWhenExpression": "isEmpty(fpMethod) || !arrayContains(['1359AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], fpMethod) || fPlanning === '160652AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              }
+            },
+            {
+              "label": "Implant service provided during visit",
+              "type": "obs",
+              "id": "imPlanMethod",
+              "questionOptions": {
+                "concept": "164515AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "rendering": "select",
+                "answers": [
+                  {
+                    "concept": "164180AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "1st time insertion"
+                  },
+                  {
+                    "concept": "164161AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Removal"
+                  },
+                  {
+                    "concept": "5424AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Re-insertion"
+                  },
+                  {
+                    "concept": "165348AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Check-Up"
+                  }
+                ]
+              },
+              "hide": {
+                "hideWhenExpression": "isEmpty(imPlanType) || fPlanning === '160652AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              }
+            },
+            {
+              "label": "Type of IUD provided",
+              "type": "obs",
+              "id": "iUdType",
+              "questionOptions": {
+                "concept": "b39992a0-7d5b-4b72-b551-9e0970ae49fa",
+                "rendering": "radio",
+                "answers": [
+                  {
+                    "concept": "165464AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Hormonal"
+                  },
+                  {
+                    "concept": "162794AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Non-Hormonal"
+                  }
+                ]
+              },
+              "hide": {
+                "hideWhenExpression": "isEmpty(fpMethod) || !arrayContains(['5275AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], fpMethod) || fPlanning === '160652AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              }
+            },
+            {
+              "label": "Quantity Dispensed",
+              "type": "obs",
+              "id": "qTyDisP",
+              "questionOptions": {
+                "concept": "1443AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "rendering": "number"
+              },
+              "hide": {
+                "hideWhenExpression": "fPlanning === '160652AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || !arrayContains(['160570AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], fpMethod) || !arrayContains(['190AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], fpMethod) || !arrayContains(['5275AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], fpMethod) || !arrayContains(['1359AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], fpMethod) || !arrayContains(['780AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], fpMethod)"
+              }
+            },
+            {
+              "label": "Date Started:",
+              "type": "obs",
+              "required": "true",
+              "id": "encDate",
+              "questionOptions": {
+                "concept": "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "rendering": "date"
+              },
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+                }
+              ],
+              "hide": {
+                "hideWhenExpression": "age < 15 || sex !=='F' || fPlanning === '160652AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              }
+            },
+            {
+              "label": "Reason for not using Family Planning Methods",
+              "type": "obs",
+              "id": "FnotOnFp",
+              "questionOptions": {
+                "rendering": "checkbox",
+                "concept": "160575AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "answers": [
+                  {
+                    "concept": "160572AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Thinks can't get pregnant"
+                  },
+                  {
+                    "concept": "159524AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Not sexually active now"
+                  },
+                  {
+                    "concept": "160572AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Wants to get pregnant"
+                  },
+                  {
+                    "concept": "159524AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Menopause"
+                  },
+                  {
+                    "concept": "160572AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Health Concerns"
+                  },
+                  {
+                    "concept": "159524AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Fears of side Effects"
+                  },
+                  {
+                    "concept": "159524AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Religious prohibition"
+                  },
+                  {
+                    "concept": "159524AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Hysterectomy"
+                  },
+                  {
+                    "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Other"
+                  }
+                ]
+              },
+              "hide": {
+                "hideWhenExpression": "age < 15 || sex !=='F' || fPlanning !== '160652AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              }
+            },
+            {
+              "label": "Other (Specify)",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "text",
+                "concept": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              },
+              "id": "otherFeMale",
+              "hide": {
+                "hideWhenExpression": "isEmpty(FnotOnFp) && FnotOnFp !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || age < 15 || sex !=='F'"
+              }
+            },
+            {
+              "label": "Family Planning Status :",
+              "type": "obs",
+              "id": "MalefPlanning",
+              "questionOptions": {
+                "concept": "160653AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "rendering": "select",
+                "answers": [
+                  {
+                    "concept": "965AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "On Family Planning"
+                  },
+                  {
+                    "concept": "160652AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Not using Family Planning"
+                  },
+                  {
+                    "concept": "1360AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Wants Family Planning"
+                  }
+                ]
+              },
+              "hide": {
+                "hideWhenExpression": "age < 15 || sex !=='M'"
+              }
+            },
+            {
+              "label": "If currently using Family Planning, or wants Family Planning, specify which method(s)",
+              "required": "true",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "checkbox",
+                "concept": "374AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "answers": [
+                  {
+                    "concept": "190AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Condoms"
+                  },
+                  {
+                    "concept": "1489AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Vasectomy"
+                  }
+                ]
+              },
+              "validators": [],
+              "hide": {
+                "hideWhenExpression": "age < 15 || sex !=='M' || MalefPlanning === '160652AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "id": "MalefpMethod"
+            },
+            {
+              "label": "Reason for not using Family Planning Methods",
+              "type": "obs",
+              "id": "notOnFpMale",
+              "questionOptions": {
+                "rendering": "checkbox",
+                "concept": "160575AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "answers": [
+                  {
+                    "concept": "159524AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Not sexually active"
+                  },
+                  {
+                    "concept": "160572AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Health Concerns"
+                  },
+                  {
+                    "concept": "159524AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Fears of side Effects"
+                  },
+                  {
+                    "concept": "159524AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Religious prohibition"
+                  },
+                  {
+                    "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Other"
+                  }
+                ]
+              },
+              "hide": {
+                "hideWhenExpression": "MalefPlanning !== '160652AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || age < 15 || sex !=='M'"
+              }
+            },
+            {
+              "label": "Other (Specify)",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "text",
+                "concept": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              },
+              "id": "otheRmaLe",
+              "hide": {
+                "hideWhenExpression": "isEmpty(notOnFpMale) && notOnFpMale !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || age < 15 || sex !=='M'"
+              }
+            },
+            {
+              "label": "Counselled for Natural FP",
+              "type": "obs",
+              "id": "natuReFP",
+              "questionOptions": {
+                "concept": "1255AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "rendering": "radio",
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "hide": {
+                "hideWhenExpression": "fPlanning === '160652AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || MalefPlanning === '160652AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              }
+            },
+            {
+              "label": "Circle beads given?",
+              "type": "obs",
+              "id": "cirCleBeadS",
+              "questionOptions": {
+                "concept": "160643AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "rendering": "radio",
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "hide": {
+                "hideWhenExpression": "age < 15 || sex !=='F' || fPlanning === '160652AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              }
+            },
+            {
+              "label": "Reasons for changing contraceptive",
+              "type": "obs",
+              "id": "cHangeoFP",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "159935AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "answers": [
+                  {
+                    "concept": "159524AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Side effects"
+                  },
+                  {
+                    "concept": "160572AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Health Concerns"
+                  },
+                  {
+                    "concept": "159524AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Cost and accessibility"
+                  },
+                  {
+                    "concept": "159524AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Lifestyle changes(travel, work, relationship)"
+                  },
+                  {
+                    "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Other"
+                  }
+                ]
+              },
+              "hide": {
+                "hideWhenExpression": "isEmpty(visitType) || visitType !== '160530AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || fPlanning !== '965AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || age < 15 || sex !== 'F'"
+              }
+            },
+            {
+              "label": "Other (Specify)",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "text",
+                "concept": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              },
+              "id": "otheRChangeFP",
+              "hide": {
+                "hideWhenExpression": "isEmpty(cHangeoFP) && cHangeoFP !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || age < 15"
+              }
+            },
+            {
+              "label": "Reasons for changing contraceptive",
+              "type": "obs",
+              "id": "cHangeoFPMale",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "159935AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "answers": [
+                  {
+                    "concept": "159524AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Side effects"
+                  },
+                  {
+                    "concept": "160572AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Health Concerns"
+                  },
+                  {
+                    "concept": "159524AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Cost and accessibility"
+                  },
+                  {
+                    "concept": "159524AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Lifestyle changes(travel, work, relationship)"
+                  },
+                  {
+                    "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Other"
+                  }
+                ]
+              },
+              "hide": {
+                "hideWhenExpression": "isEmpty(visitType) || visitType !== '160530AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || MalefPlanning !== '965AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || age < 15 || sex !== 'M' || arrayContains(['1489AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], MalefpMethod)"
+              }
+            },
+            {
+              "label": "Other (Specify)",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "text",
+                "concept": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              },
+              "id": "otheRChangeFPMale",
+              "hide": {
+                "hideWhenExpression": "isEmpty(cHangeoFPMale) && cHangeoFPMale !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || age < 15"
+              }
+            },
+            {
+              "label": "Reasons for lONG lasting contraceptive (LARC) Removal",
+              "type": "obs",
+              "id": "reMoValFP",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "162760AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "answers": [
+                  {
+                    "concept": "159524AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Maturity"
+                  },
+                  {
+                    "concept": "160572AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Desire to concieve"
+                  },
+                  {
+                    "concept": "163296AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Health concerns/side effects "
+                  },
+                  {
+                    "concept": "159524AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Method switch"
+                  },
+                  {
+                    "concept": "160693AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Method failure"
+                  },
+                  {
+                    "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Other"
+                  }
+                ]
+              },
+              "hide": {
+                "hideWhenExpression": "isEmpty(visitType) || visitType !== '160530AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || fPlanning !== '965AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || age < 15 || sex !=='F'"
+              }
+            },
+            {
+              "label": "Other (Specify)",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "text",
+                "concept": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              },
+              "id": "otheRChangeFP",
+              "hide": {
+                "hideWhenExpression": "isEmpty(reMoValFP) && reMoValFP !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || age < 15"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "encounterType": "975ae894-7660-4224-b777-468c2e710a2a"
+}

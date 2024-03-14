@@ -57,109 +57,120 @@
               "isExpanded": "true",
               "questions": [
                 {
-                  "label": "Symptoms",
-                  "type": "obs",
-                  "id": "sYmpTomsForOTC",
-                  "questionOptions": {
-                    "concept": "5219AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "rendering": "multiCheckbox",
-                    "answers": [
+                    "label": "Select a symptom",
+                    "type": "obsGroup",
+                    "id": "symptomsRepeat",
+                    "questionOptions": {
+                      "concept": "160029AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "rendering": "repeating"
+                    },
+                    "questions": [
                       {
-                        "concept": "114403AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Pain"
+                        "label": "Symptoms",
+                        "type": "obs",
+                        "id": "sYmpTomsForOTC",
+                        "questionOptions": {
+                          "concept": "5219AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                          "rendering": "select",
+                          "answers": [
+                            {
+                              "concept": "114403AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                              "label": "Pain"
+                            },
+                            {
+                              "concept": "130842AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                              "label": "Immobility"
+                            },
+                            {
+                              "concept": "140468AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                              "label": "Muscle tenseness"
+                            },
+                            {
+                              "concept": "119775AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                              "label": "Muscle spasms"
+                            },
+                            {
+                              "concept": "163894AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                              "label": "Swelling"
+                            },
+                            {
+                              "concept": "111525AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                              "label": "Loss of function"
+                            },
+                            {
+                              "concept": "116554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                              "label": "Joint stiffness"
+                            },
+                            {
+                              "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                              "label": "Other"
+                            }
+                          ]
+                        }
                       },
                       {
-                        "concept": "130842AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Immobility"
+                        "label": "Other Specify",
+                        "type": "obs",
+                        "id": "symptomsPecifyOTC",
+                        "questionOptions": {
+                          "concept": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                          "rendering": "textarea"
+                        },
+                        "hide": {
+                          "hideWhenExpression": "isEmpty(sYmpTomsForOTC) || !arrayContains(['5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], sYmpTomsForOTC) && arrayContains(['114403AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','130842AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','140468AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','119775AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','163894AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','111525AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','116554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], sYmpTomsForOTC)"
+                        }
                       },
                       {
-                        "concept": "140468AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Muscle tenseness"
+                        "label": "Location",
+                        "type": "obs",
+                        "id": "OTCloCation",
+                        "questionOptions": {
+                          "concept": "e18c92d4-1c17-48e5-94a5-95d7835b67ec",
+                          "rendering": "text"
+                        },
+                        "validators": [],
+                        "hide": {
+                          "hideWhenExpression": "isEmpty(sYmpTomsForOTC) || !arrayContains(['5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','111525AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','163894AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','114403AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '116554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], sYmpTomsForOTC) && arrayContains(['130842AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','140468AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','119775AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], sYmpTomsForOTC)"
+                        }
                       },
                       {
-                        "concept": "119775AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Muscle spasms"
+                        "label": "Duration (Days)",
+                        "type": "obs",
+                        "id": "OTCduration",
+                        "questionOptions": {
+                          "concept": "1731AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                          "rendering": "number"
+                        },
+                        "validators": [],
+                        "hide": {
+                          "hideWhenExpression": "isEmpty(sYmpTomsForOTC) || !arrayContains(['5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','111525AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','163894AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','114403AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '116554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], sYmpTomsForOTC) && arrayContains(['130842AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','140468AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','119775AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], sYmpTomsForOTC)"
+                        }
                       },
                       {
-                        "concept": "163894AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Swelling"
-                      },
-                      {
-                        "concept": "111525AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Loss of function"
-                      },
-                      {
-                        "concept": "116554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Joint stiffness"
-                      },
-                      {
-                        "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Other"
+                        "label": "Onset",
+                        "type": "obs",
+                        "id": "OnSETOtC",
+                        "questionOptions": {
+                          "concept": "162642AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                          "rendering": "radio",
+                          "answers": [
+                            {
+                              "concept": "1839AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                              "label": "Sudden"
+                            },
+                            {
+                              "concept": "1499AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                              "label": "Gradual"
+                            }
+                          ]
+                        },
+                        "validators": [],
+                        "hide": {
+                          "hideWhenExpression": "isEmpty(sYmpTomsForOTC) || !arrayContains(['5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','111525AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','163894AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','114403AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '116554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], sYmpTomsForOTC) && arrayContains(['130842AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','140468AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','119775AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], sYmpTomsForOTC)"
+                        }
                       }
                     ]
                   }
-                },
-                {
-                  "label": "Other Specify",
-                  "type": "obs",
-                  "id": "symptomsPecifyOTC",
-                  "questionOptions": {
-                    "concept": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "rendering": "textarea"
-                  },
-                  "hide": {
-                    "hideWhenExpression": "isEmpty(sYmpTomsForOTC) || !arrayContains(['5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], sYmpTomsForOTC) && arrayContains(['114403AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','130842AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','140468AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','119775AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','163894AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','111525AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','116554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], sYmpTomsForOTC)"
-                  }
-                },
-                {
-                  "label": "Location",
-                  "type": "obs",
-                  "id": "OTCloCation",
-                  "questionOptions": {
-                    "concept": "e18c92d4-1c17-48e5-94a5-95d7835b67ec",
-                    "rendering": "text"
-                  },
-                  "validators": [],
-                  "hide": {
-                    "hideWhenExpression": "isEmpty(sYmpTomsForOTC) || !arrayContains(['5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','111525AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','163894AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','114403AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '116554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], sYmpTomsForOTC) && arrayContains(['130842AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','140468AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','119775AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], sYmpTomsForOTC)"
-                  }
-                },
-                {
-                  "label": "Duration (Days)",
-                  "type": "obs",
-                  "id": "OTCduration",
-                  "questionOptions": {
-                    "concept": "1731AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "rendering": "number"
-                  },
-                  "validators": [],
-                  "hide": {
-                    "hideWhenExpression": "isEmpty(sYmpTomsForOTC) || !arrayContains(['5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','111525AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','163894AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','114403AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '116554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], sYmpTomsForOTC) && arrayContains(['130842AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','140468AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','119775AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], sYmpTomsForOTC)"
-                  }
-                },
-                {
-                  "label": "Onset",
-                  "type": "obs",
-                  "id": "OnSETOtC",
-                  "questionOptions": {
-                    "concept": "162642AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "rendering": "radio",
-                    "answers": [
-                      {
-                        "concept": "1839AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Sudden"
-                      },
-                      {
-                        "concept": "1499AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Gradual"
-                      }
-                    ]
-                  },
-                  "validators": [],
-                  "hide": {
-                    "hideWhenExpression": "isEmpty(sYmpTomsForOTC) || !arrayContains(['5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','111525AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','163894AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','114403AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '116554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], sYmpTomsForOTC) && arrayContains(['130842AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','140468AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','119775AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], sYmpTomsForOTC)"
-                  }
-                }
               ]
             }
           ]

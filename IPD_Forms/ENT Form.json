@@ -52,7 +52,7 @@
         ]
       },
       {
-        "label": "Patient ENT Examination",
+        "label": "Patient's History",
         "sections": [
           {
             "label": "Patient's Symptoms",
@@ -123,14 +123,6 @@
                       "label": "Sore Throat"
                     },
                     {
-                      "concept": "111525AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Vertigo"
-                    },
-                    {
-                      "concept": "158843AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Sore Throat"
-                    },
-                    {
                       "concept": "125782AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                       "label": "Stridor"
                     },
@@ -160,103 +152,122 @@
                 "hide": {
                   "hideWhenExpression": "isEmpty(sYmpTomsForENT) || !arrayContains(['5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], sYmpTomsForENT)"
                 }
-              },
-              {
-                "label": "Ear findings",
-                "type": "obs",
-                "id": "earFinDiNgs",
-                "questionOptions": {
-                  "concept": "f8fd8181-655e-4b32-97e3-4ae539c6de45",
-                  "rendering": "multiCheckbox",
-                  "answers": [
-                    {
-                      "concept": "126385AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Skin Tag"
-                    },
-                    {
-                      "concept": "142671AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Deformity of Pinna"
-                    },
-                    {
-                      "concept": "163894AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Swelling"
-                    },
-                    {
-                      "concept": "135412AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Macrotia"
-                    },
-                    {
-                      "concept": "134186AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Microtia"
-                    },
-                    {
-                      "concept": "114431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Otitis externa"
-                    },
-                    {
-                      "concept": "131113AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Otitis media"
-                    },
-                    {
-                      "concept": "139740AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Fungal Ear Infection"
-                    },
-                    {
-                      "concept": "122904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Wax in Ear Canal"
-                    }
-                  ]
-                }
-              },
-              {
-                "label": "Nose findings",
-                "type": "obs",
-                "id": "NoseFindinGs",
-                "questionOptions": {
-                  "concept": "1123AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                  "rendering": "multiCheckbox",
-                  "answers": [
-                    {
-                      "concept": "142493AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Deviated Nasal Septum"
-                    },
-                    {
-                      "concept": "163894AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Swelling"
-                    },
-                    {
-                      "concept": "130579AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Perforation of Nasal Septum"
-                    },
-                    {
-                      "concept": "119558AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Prominent blood vessels"
-                    },
-                    {
-                      "concept": "115400AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Nasal Polyp"
-                    }
-                  ]
-                }
-              },
-              {
-                "label": "Clinical Notes",
-                "type": "obs",
-                "id": "clinicianfinDingsNotes",
-                "questionOptions": {
-                  "concept": "462bfb69-b97e-425c-b387-ddd3a5c8653c",
-                  "rendering": "textarea"
-                },
-                "hide": {
-                  "hideWhenExpression": "isEmpty(allsystemReview) || !arrayContains(['166442AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], allsystemReview)"
-                }
               }
             ]
           }
         ]
       },
       {
-        "label": "Diagnosis",
+        "label": "Patient's Examination",
+        "sections": [
+            {
+                "label": "Examination Findings",
+                "isExpanded": "true",
+                "questions": [
+                    {
+                        "label": "General Examination",
+                        "type": "obs",
+                        "id": "genFindings",
+                        "questionOptions": {
+                          "concept": "160029AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                          "rendering": "textarea",
+                          "rows": "10"
+                        }
+                      },
+                    {
+                        "label": "Ear findings",
+                        "type": "obs",
+                        "id": "earFinDiNgs",
+                        "questionOptions": {
+                          "concept": "f8fd8181-655e-4b32-97e3-4ae539c6de45",
+                          "rendering": "multiCheckbox",
+                          "answers": [
+                            {
+                              "concept": "126385AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                              "label": "Skin Tag"
+                            },
+                            {
+                              "concept": "142671AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                              "label": "Deformity of Pinna"
+                            },
+                            {
+                              "concept": "163894AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                              "label": "Swelling"
+                            },
+                            {
+                              "concept": "135412AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                              "label": "Macrotia"
+                            },
+                            {
+                              "concept": "134186AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                              "label": "Microtia"
+                            },
+                            {
+                              "concept": "114431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                              "label": "Otitis externa"
+                            },
+                            {
+                              "concept": "131113AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                              "label": "Otitis media"
+                            },
+                            {
+                              "concept": "139740AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                              "label": "Fungal Ear Infection"
+                            },
+                            {
+                              "concept": "122904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                              "label": "Wax in Ear Canal"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "label": "Nose findings",
+                        "type": "obs",
+                        "id": "NoseFindinGs",
+                        "questionOptions": {
+                          "concept": "1123AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                          "rendering": "multiCheckbox",
+                          "answers": [
+                            {
+                              "concept": "142493AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                              "label": "Deviated Nasal Septum"
+                            },
+                            {
+                              "concept": "163894AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                              "label": "Swelling"
+                            },
+                            {
+                              "concept": "130579AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                              "label": "Perforation of Nasal Septum"
+                            },
+                            {
+                              "concept": "119558AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                              "label": "Prominent blood vessels"
+                            },
+                            {
+                              "concept": "115400AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                              "label": "Nasal Polyp"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "label": "Clinical Notes",
+                        "type": "obs",
+                        "id": "clinicianfinDingsNotes",
+                        "questionOptions": {
+                          "concept": "462bfb69-b97e-425c-b387-ddd3a5c8653c",
+                          "rendering": "textarea",
+                          "rows": "10"
+                        }
+                      }
+                ]
+            }
+        ]
+      },
+      {
+        "label": "Patient's Management",
         "sections": [
           {
             "label": "Treatment/Management Plan",
@@ -306,12 +317,7 @@
                 }
               }
             ]
-          }
-        ]
-      },
-      {
-        "label": "Procedure Notes",
-        "sections": [
+          },
           {
             "label": "Procedures",
             "isExpanded": "true",
@@ -404,12 +410,7 @@
                 }
               }
             ]
-          }
-        ]
-      },
-      {
-        "label": "Referral Notes",
-        "sections": [
+          },
           {
             "label": "Referral Details",
             "isExpanded": "true",

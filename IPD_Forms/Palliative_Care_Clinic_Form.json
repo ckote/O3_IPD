@@ -273,7 +273,7 @@
                   "type": "obs",
                   "id": "historyTaking",
                   "questionOptions": {
-                    "concept": "",
+                    "concept": "81bbc312-d0f6-4950-822a-f7a47e599013",
                     "rendering": "radio",
                     "answers": [
                       {
@@ -448,7 +448,7 @@
                       },
                       "validators": [],
                       "hide": {
-                        "hideWhenExpression": "isEmpty(sYmpTomsForOTC) || !arrayContains(['5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','111525AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','163894AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','114403AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '116554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], sYmpTomsForOTC) && arrayContains(['130842AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','140468AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','119775AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], sYmpTomsForOTC)"
+                        "hideWhenExpression": ""
                       }
                     },
                     {
@@ -474,7 +474,7 @@
                         ]
                       },
                       "hide": {
-                        "hideWhenExpression": "isEmpty(complaIntforP) || complaIntforP === ('139084AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','125225AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
+                        "hideWhenExpression": "complaIntforP === '139084AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || complaIntforP === '125225AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                       }
                     },
                     {
@@ -508,7 +508,7 @@
                         ]
                       },
                       "hide": {
-                        "hideWhenExpression": "isEmpty(complaIntforP)|| complaIntforP !== ('139084AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','125225AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
+                        "hideWhenExpression": "isEmpty(complaIntforP) || complaIntforP !== '139084AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && complaIntforP !== '125225AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                       }
                     }
                   ]
@@ -519,7 +519,7 @@
                   "id": "histOfPreIllness",
                   "questionOptions": {
                     "concept": "1390AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "rendering": "text-area",
+                    "rendering": "textarea",
                     "rows": "10"
                   }
                 },
@@ -529,7 +529,7 @@
                   "id": "histOftreatMent",
                   "questionOptions": {
                     "concept": "163104AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "rendering": "text-area",
+                    "rendering": "textarea",
                     "rows": "10"
                   }
                 },
@@ -662,7 +662,7 @@
                   "id": "histOfsurgeries",
                   "questionOptions": {
                     "concept": "166635AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "rendering": "text-area",
+                    "rendering": "textarea",
                     "rows": "10"
                   }
                 }

@@ -1015,16 +1015,13 @@
               "isExpanded": "true",
               "questions": [
                 {
-                  "label": "Create Appointment for patient",
+                  "label": "Next review date:",
                   "required": false,
-                  "id": "AppWorkspaceLauncher",
+                  "id": "appointmentWorkspaceLauncher",
                   "questionOptions": {
                     "rendering": "workspace-launcher",
-                    "buttonLabel": "Create appointment",
+                    "buttonLabel": "Add appointments",
                     "workspaceName": "appointments-form-workspace"
-                  },
-                  "hide": {
-                    "hideWhenExpression": ""
                   }
                 }
               ]

@@ -1579,12 +1579,13 @@
               },
               {
                 "label": "Next review date:",
-                "type": "obs",
+                "required": false,
+                "id": "appointmentWorkspaceLauncher",
                 "questionOptions": {
-                  "rendering": "date",
-                  "concept": "167132AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  "rendering": "workspace-launcher",
+                  "buttonLabel": "Add appointments",
+                  "workspaceName": "appointments-form-workspace"
                 },
-                "id": "tCAppoinTment",
                 "validators": [
                   {
                     "type": "date",
@@ -1596,9 +1597,9 @@
                     "message": "Next Appointment should be greater than the encounter date."
                   }
                 ],
-                  "hide": {
-                        "hideWhenExpression": "dischargeStatus !== '162677AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || referStO === '164165AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-                  }
+                "hide": {
+                  "hideWhenExpression": "dischargeStatus !== '162677AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || referStO === '164165AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+            }
               }
             ]
           }

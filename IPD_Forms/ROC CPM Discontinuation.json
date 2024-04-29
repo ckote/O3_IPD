@@ -62,7 +62,7 @@
                   "required": "true",
                   "questionOptions": {
                     "rendering": "radio",
-                    "concept": "ccf759b9-bdd4-4265-a71a-67a894d89dec",
+                    "concept": "af430c90-a512-43eb-aa91-50143c385304",
                     "answers": [
                       {
                         "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -86,7 +86,7 @@
                   "id": "Indicatepregnancy",
                   "questionOptions": {
                     "rendering": "radio",
-                    "concept": "166664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "concept": "5272AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "answers": [
                       {
                         "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -451,14 +451,13 @@
                     {
                       "label": "Specify other complaints",
                       "type": "obs",
-                      "id": "OtherSpecificComplaints",
+                      "id": "SpecificComplaints",
                       "questionOptions": {
                         "concept": "20395601-257c-490c-86c2-acffb627f91f",
                         "rendering": "textarea"
                       },
-                      "validators": [],
                       "hide": {
-                        "hideWhenExpression": "isEmpty(comPlaiNtsToday) && comPlaiNtsToday !== 'true' && complaintField !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                        "hideWhenExpression": "cOmplaIntField !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                       }
                     },
                     {

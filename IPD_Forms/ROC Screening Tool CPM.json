@@ -50,10 +50,10 @@
       ]
     },
     {
-      "label": "Screening Checklist",
+      "label": "Screening Questions",
       "sections": [
         {
-          "label": "ROC Details",
+          "label": "Screening Questions for ROC",
           "isExpanded": "true",
           "questions": [
             {
@@ -78,7 +78,122 @@
               "hide": {
                 "hideWhenExpression": ""
               }
-            }
+            },
+            {
+                "label": "Has the client been screened for TB?",
+                "type": "obs",
+                "id": "screenedTB",
+                "required": "true",
+                "questionOptions": {
+                  "concept": "cddbf6fe-4bcd-40b6-a7ea-8573e4080192",
+                  "rendering": "radio",
+                  "answers": [
+                    {
+                      "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Yes"
+                    },
+                    {
+                      "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "No"
+                    }
+                  ]
+                },
+                "hide": {
+                  "hideWhenExpression": "isEmpty(ROCsIdeEffects) || ROCsIdeEffects !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                }
+              },
+              {
+                "label": "Cough of any duration",
+                "type": "obs",
+                "id": "coughDuration",
+                "questionOptions": {
+                  "concept": "5959AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                  "rendering": "radio",
+                  "answers": [
+                    {
+                      "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Yes"
+                    },
+                    {
+                      "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "No"
+                    }
+                  ]
+                },
+                "validators": [],
+                "hide": {
+                  "hideWhenExpression": "isEmpty(screenedTB) || screenedTB !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' "
+                }
+              },
+              {
+                "label": "Client has a fever?",
+                "type": "obs",
+                "id": "fever",
+                "questionOptions": {
+                  "concept": "140238AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                  "rendering": "radio",
+                  "answers": [
+                    {
+                      "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Yes"
+                    },
+                    {
+                      "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "No"
+                    }
+                  ]
+                },
+                "validators": [],
+                "hide": {
+                  "hideWhenExpression": "isEmpty(screenedTB) || screenedTB !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' "
+                }
+              },
+              {
+                "label": "Noticable weight loss or poor weight gain",
+                "type": "obs",
+                "id": "weightLoss",
+                "questionOptions": {
+                  "concept": "832AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                  "rendering": "radio",
+                  "answers": [
+                    {
+                      "concept": "1",
+                      "label": "Yes"
+                    },
+                    {
+                      "concept": "0",
+                      "label": "No"
+                    }
+                  ]
+                },
+                "validators": [],
+                "hide": {
+                  "hideWhenExpression": "isEmpty(screenedTB) || screenedTB !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' "
+                }
+              },
+              {
+                "label": "Client Experiencing night sweats?",
+                "type": "obs",
+                "id": "experiencingSweats",
+                "questionOptions": {
+                  "concept": "133027AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                  "rendering": "radio",
+                  "answers": [
+                    {
+                      "concept": "1",
+                      "label": "Yes"
+                    },
+                    {
+                      "concept": "0",
+                      "label": "No"
+                    }
+                  ]
+                },
+                "validators": [],
+                "hide": {
+                  "hideWhenExpression": "isEmpty(screenedTB) || screenedTB !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' "
+                }
+              }
           ]
         },
         {
@@ -104,7 +219,7 @@
                 ]
               },
               "hide": {
-                "hideWhenExpression": ""
+                "hideWhenExpression": "isEmpty(ROCsIdeEffects) || ROCsIdeEffects !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               }
             },
             {
@@ -253,7 +368,7 @@
                 ]
               },
               "hide": {
-                "hideWhenExpression": ""
+                "hideWhenExpression": "isEmpty(ROCsIdeEffects) || ROCsIdeEffects !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               }
             },
             {
@@ -275,7 +390,7 @@
                 ]
               },
               "hide": {
-                "hideWhenExpression": ""
+                "hideWhenExpression": "isEmpty(ROCsIdeEffects) || ROCsIdeEffects !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               }
             }
           ]
@@ -309,7 +424,7 @@
                 ]
               },
               "hide": {
-                "hideWhenExpression": ""
+                "hideWhenExpression": "isEmpty(ROCsIdeEffects) || ROCsIdeEffects !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               }
             },
             {
@@ -720,7 +835,7 @@
               ]
             },
             {
-              "label": "Clinical notes",
+              "label": "Pharmacist notes",
               "type": "obs",
               "id": "ClinICNotes",
               "questionOptions": {
@@ -729,7 +844,7 @@
               },
               "validators": [],
               "hide": {
-                "hideWhenExpression": "visitTo === '167050AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": ""
               }
             }
           ]

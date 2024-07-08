@@ -3,7 +3,7 @@
   "description": "ROC Screening Tool Community Pharmacy Form",
   "version": "2.0",
   "published": true,
-  "uuid": "ace49ccd-3fb2-4664-99b7-a0ca757c7ea1",
+  "uuid": "",
   "retired": false,
   "encounter": "Consultation",
   "pages": [
@@ -57,7 +57,7 @@
           "isExpanded": "true",
           "questions": [
             {
-              "label": "Recepient of Care experiencing any side effects?",
+              "label": "Did the ROC miss their scheduled appointment for more than 7 days",
               "type": "obs",
               "required": "true",
               "questionOptions": {
@@ -74,126 +74,176 @@
                   }
                 ]
               },
-              "id": "ROCsIdeEffects",
+              "id": "ROCAppointment",
               "hide": {
                 "hideWhenExpression": ""
               }
             },
             {
-                "label": "Has the client been screened for TB?",
-                "type": "obs",
-                "id": "screenedTB",
-                "required": "true",
-                "questionOptions": {
-                  "concept": "cddbf6fe-4bcd-40b6-a7ea-8573e4080192",
-                  "rendering": "radio",
-                  "answers": [
-                    {
-                      "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Yes"
-                    },
-                    {
-                      "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "No"
-                    }
-                  ]
-                },
-                "hide": {
-                  "hideWhenExpression": "isEmpty(ROCsIdeEffects) || ROCsIdeEffects !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-                }
+              "label": "TB Screening Questions",
+              "type": "obsGroup",
+              "id": "scReeNiNQuiZ",
+              "questionOptions": {
+                "concept": "160108AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "rendering": "group"
               },
-              {
-                "label": "Cough of any duration",
-                "type": "obs",
-                "id": "coughDuration",
-                "questionOptions": {
-                  "concept": "5959AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                  "rendering": "radio",
-                  "answers": [
-                    {
-                      "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Yes"
-                    },
-                    {
-                      "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "No"
-                    }
-                  ]
+              "questions": [
+                {
+                  "label": "Cough of any duration:",
+                  "type": "obs",
+                  "id": "cOughDuratiOn",
+                  "questionOptions": {
+                    "concept": "1729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "rendering": "radio",
+                    "answers": [
+                      {
+                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Yes"
+                      },
+                      {
+                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "No"
+                      }
+                    ]
+                  }
                 },
-                "validators": [],
-                "hide": {
-                  "hideWhenExpression": "isEmpty(screenedTB) || screenedTB !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' "
+                {
+                  "label": "Fever:",
+                  "type": "obs",
+                  "id": "FeverIsh",
+                  "questionOptions": {
+                    "concept": "1729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "rendering": "radio",
+                    "answers": [
+                      {
+                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Yes"
+                      },
+                      {
+                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "No"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "label": "Noticeable weight loss or poor weight gain:",
+                  "type": "obs",
+                  "id": "WeigHtLossGain",
+                  "questionOptions": {
+                    "concept": "1729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "rendering": "radio",
+                    "answers": [
+                      {
+                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Yes"
+                      },
+                      {
+                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "No"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "label": "Night sweats:",
+                  "type": "obs",
+                  "id": "NighTsWeatS",
+                  "questionOptions": {
+                    "concept": "1729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "rendering": "radio",
+                    "answers": [
+                      {
+                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Yes"
+                      },
+                      {
+                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "No"
+                      }
+                    ]
+                  },
+                  "hide": {
+                    "hideWhenExpression": "age < 16"
+                  }
+                },
+                {
+                  "label": "Contact with a TB Case:",
+                  "type": "obs",
+                  "id": "ConTacTbCase",
+                  "questionOptions": {
+                    "concept": "1729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "rendering": "radio",
+                    "answers": [
+                      {
+                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Yes"
+                      },
+                      {
+                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "No"
+                      }
+                    ]
+                  },
+                  "hide": {
+                    "hideWhenExpression": "age > 15"
+                  }
                 }
+              ]
+            },
+            {
+              "label": "Resulting TB Status:",
+              "type": "obs",
+              "id": "tbResultstaTuS",
+              "questionOptions": {
+                "concept": "1659AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "rendering": "radio",
+                "readonly": "true",
+                "calculate": {
+                  "calculateExpression": "((String(cOughDuratiOn) === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : 0) + (String(FeverIsh) === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : 0) + (String(WeigHtLossGain) === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : 0) + (String(NighTsWeatS) === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : 0) + (String(ConTacTbCase) === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : 0)) ? '142177AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' : ((String(cOughDuratiOn) === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : 0) + (String(FeverIsh) === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : 0) + (String(WeigHtLossGain) === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : 0) + (String(NighTsWeatS) === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : 0) + (String(ConTacTbCase) === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : 0)) ? '1660AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' : ''"
+                },
+                "answers": [
+                  {
+                    "concept": "1660AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No TB Signs"
+                  },
+                  {
+                    "concept": "142177AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Presumed TB"
+                  },
+                  {
+                    "concept": "1662AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "TB Confirmed"
+                  },
+                  {
+                    "concept": "160737AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "TB Screening Not Done"
+                  }
+                ]
               },
-              {
-                "label": "Client has a fever?",
-                "type": "obs",
-                "id": "fever",
-                "questionOptions": {
-                  "concept": "140238AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                  "rendering": "radio",
-                  "answers": [
-                    {
-                      "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "Yes"
-                    },
-                    {
-                      "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                      "label": "No"
-                    }
-                  ]
-                },
-                "validators": [],
-                "hide": {
-                  "hideWhenExpression": "isEmpty(screenedTB) || screenedTB !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' "
-                }
-              },
-              {
-                "label": "Noticable weight loss or poor weight gain",
-                "type": "obs",
-                "id": "weightLoss",
-                "questionOptions": {
-                  "concept": "832AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                  "rendering": "radio",
-                  "answers": [
-                    {
-                      "concept": "1",
-                      "label": "Yes"
-                    },
-                    {
-                      "concept": "0",
-                      "label": "No"
-                    }
-                  ]
-                },
-                "validators": [],
-                "hide": {
-                  "hideWhenExpression": "isEmpty(screenedTB) || screenedTB !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' "
-                }
-              },
-              {
-                "label": "Client Experiencing night sweats?",
-                "type": "obs",
-                "id": "experiencingSweats",
-                "questionOptions": {
-                  "concept": "133027AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                  "rendering": "radio",
-                  "answers": [
-                    {
-                      "concept": "1",
-                      "label": "Yes"
-                    },
-                    {
-                      "concept": "0",
-                      "label": "No"
-                    }
-                  ]
-                },
-                "validators": [],
-                "hide": {
-                  "hideWhenExpression": "isEmpty(screenedTB) || screenedTB !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' "
-                }
+              "hide": {
+                "hideWhenExpression": "((String(cOughDuratiOn) === '159799AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'? 1 : 0) + (String(FeverIsh) === '1494AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'? 1 : 0) + (String(WeigHtLossGain) === '832AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'? 1 : 0) + (String(NighTsWeatS) === '133027AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'? 1 : 0) + (String(LeSSpLayFul) === '116334AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'? 1 : 0) + (String(ConTacTbCase) === '124068AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'? 1 : 0)) === 0"
               }
+            },
+            {
+              "label": "Any signs of Jaundice",
+              "type": "obs",
+              "id": "JauNDiceSigns",
+              "questionOptions": {
+                "concept": "460AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "rendering": "radio",
+                "answers": [
+                  {
+                    "concept": "124068AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              }
+            }
           ]
         },
         {
@@ -374,7 +424,7 @@
             {
               "label": "Skipped any pills",
               "type": "obs",
-              "id": "herbalRemedies",
+              "id": "SkiPPedPills",
               "questionOptions": {
                 "concept": "159530AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                 "rendering": "radio",
@@ -852,5 +902,5 @@
       ]
     }
   ],
-  "encounterType": "c49952bf-218b-44b4-8d2a-1947cbf00fff"
+  "encounterType": ""
 }

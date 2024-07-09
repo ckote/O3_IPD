@@ -1,11 +1,11 @@
 {
-    "name": "Community Pharmacy Model Regerral Form",
-    "description": "Community Pharmacy Model Regerral Form",
+    "name": "Community Pharmacy Model Referral Form",
+    "description": "Community Pharmacy Model Referral Form",
     "version": "1",
     "published": true,
-    "uuid": "xxxx",
+    "uuid": "b1e1f6fe-1894-4d06-bd8c-2b87f7cd9577",
     "retired": false,
-    "encounter": "Consultation",
+    "encounter": "CPM Referral Encounter",
     "pages": [
       {
         "label": "Visit Details",
@@ -216,25 +216,6 @@
                 }
               },
               {
-                "label": "Drug Order",
-                "required": false,
-                "id": "drugsWorkspaceLauncher",
-                "questionOptions": {
-                  "rendering": "workspace-launcher",
-                  "buttonLabel": "Add drug order",
-                  "workspaceName": "add-drug-order"
-                },
-                "hide": {
-                  "hideWhenExpression": "medHis !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-                }
-              }
-            ]
-          },
-          {
-            "label": "Referring Details",
-            "isExpanded": "true",
-            "questions": [
-              {
                 "label": "Next drug refill date:",
                 "required": false,
                 "id": "appointmentWorkspaceLauncher",
@@ -255,6 +236,25 @@
                   }
                 ]
               },
+              {
+                "label": "Drug Order",
+                "required": false,
+                "id": "drugsWorkspaceLauncher",
+                "questionOptions": {
+                  "rendering": "workspace-launcher",
+                  "buttonLabel": "Add drug order",
+                  "workspaceName": "add-drug-order"
+                },
+                "hide": {
+                  "hideWhenExpression": "medHis !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                }
+              }
+            ]
+          },
+          {
+            "label": "Referring Details",
+            "isExpanded": "true",
+            "questions": [
               {
                 "label": "Name of Provider",
                 "type": "encounterProvider",
@@ -290,5 +290,5 @@
         ]
       }
     ],
-    "encounterType": "xxxxxx"
+    "encounterType": "c49952bf-218b-44b4-8d2a-1947cbf00fff"
   }

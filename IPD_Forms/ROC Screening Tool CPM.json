@@ -3,7 +3,7 @@
   "description": "ROC Screening Tool Community Pharmacy Form",
   "version": "2.0",
   "published": true,
-  "uuid": "",
+  "uuid": "f7dbe6b6-2a5a-46e6-af52-45bf2962f4aa",
   "retired": false,
   "encounter": "Consultation",
   "pages": [
@@ -105,6 +105,9 @@
                         "label": "No"
                       }
                     ]
+                  },
+                  "hide": {
+                    "hideWhenExpression": "ROCAppointment === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                   }
                 },
                 {
@@ -124,6 +127,9 @@
                         "label": "No"
                       }
                     ]
+                  },
+                  "hide": {
+                    "hideWhenExpression": "ROCAppointment === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                   }
                 },
                 {
@@ -143,6 +149,9 @@
                         "label": "No"
                       }
                     ]
+                  },
+                  "hide": {
+                    "hideWhenExpression": "ROCAppointment === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                   }
                 },
                 {
@@ -164,7 +173,7 @@
                     ]
                   },
                   "hide": {
-                    "hideWhenExpression": "age < 16"
+                    "hideWhenExpression": "age < 16 || ROCAppointment === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                   }
                 },
                 {
@@ -186,7 +195,7 @@
                     ]
                   },
                   "hide": {
-                    "hideWhenExpression": "age > 15"
+                    "hideWhenExpression": "age > 15 || ROCAppointment === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                   }
                 }
               ]
@@ -198,7 +207,7 @@
               "questionOptions": {
                 "concept": "1659AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                 "rendering": "radio",
-                "readonly": "true",
+                "readOnly": "true",
                 "calculate": {
                   "calculateExpression": "((String(cOughDuratiOn) === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : 0) + (String(FeverIsh) === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : 0) + (String(WeigHtLossGain) === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : 0) + (String(NighTsWeatS) === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : 0) + (String(ConTacTbCase) === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : 0)) ? '142177AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' : ((String(cOughDuratiOn) === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : 0) + (String(FeverIsh) === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : 0) + (String(WeigHtLossGain) === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : 0) + (String(NighTsWeatS) === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : 0) + (String(ConTacTbCase) === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : 0)) ? '1660AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' : ''"
                 },
@@ -210,19 +219,11 @@
                   {
                     "concept": "142177AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Presumed TB"
-                  },
-                  {
-                    "concept": "1662AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "TB Confirmed"
-                  },
-                  {
-                    "concept": "160737AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "TB Screening Not Done"
                   }
                 ]
               },
               "hide": {
-                "hideWhenExpression": "((String(cOughDuratiOn) === '159799AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'? 1 : 0) + (String(FeverIsh) === '1494AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'? 1 : 0) + (String(WeigHtLossGain) === '832AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'? 1 : 0) + (String(NighTsWeatS) === '133027AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'? 1 : 0) + (String(LeSSpLayFul) === '116334AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'? 1 : 0) + (String(ConTacTbCase) === '124068AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'? 1 : 0)) === 0"
+                "hideWhenExpression": "ROCAppointment === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || (((String(cOughDuratiOn) === '159799AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'? 1 : 0) + (String(FeverIsh) === '1494AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'? 1 : 0) + (String(WeigHtLossGain) === '832AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'? 1 : 0) + (String(NighTsWeatS) === '133027AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'? 1 : 0) + (String(LeSSpLayFul) === '116334AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'? 1 : 0) + (String(ConTacTbCase) === '124068AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'? 1 : 0)) === 0)"
               }
             },
             {
@@ -234,7 +235,7 @@
                 "rendering": "radio",
                 "answers": [
                   {
-                    "concept": "124068AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Yes"
                   },
                   {
@@ -242,6 +243,58 @@
                     "label": "No"
                   }
                 ]
+              },
+              "hide": {
+                "hideWhenExpression": "ROCAppointment === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              }
+            },
+            {
+              "label": "Persistent Headache?",
+              "type": "obs",
+              "id": "HeadAches",
+              "questionOptions": {
+                "concept": "159520AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "rendering": "radio",
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "hide": {
+                "hideWhenExpression": "ROCAppointment === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              }
+            },
+            {
+              "label": "Patient had contact with TB Infected person in the last 12 months?",
+              "type": "obs",
+              "id": "contactTB",
+              "required": "true",
+              "questionOptions": {
+                "concept": "124068AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "rendering": "radio",
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "alert": {
+                "alertWhenExpression": "ROCAppointment === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || tbResultstaTuS === '142177AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || JauNDiceSigns === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || HeadAches === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || contactTB === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'",
+                "message": "Please refer the Recepient of Care back to the Health Facility"
+              },
+              "hide": {
+                "hideWhenExpression": "ROCAppointment === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               }
             }
           ]
@@ -269,7 +322,7 @@
                 ]
               },
               "hide": {
-                "hideWhenExpression": "isEmpty(ROCsIdeEffects) || ROCsIdeEffects !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "ROCAppointment === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               }
             },
             {
@@ -418,7 +471,7 @@
                 ]
               },
               "hide": {
-                "hideWhenExpression": "isEmpty(ROCsIdeEffects) || ROCsIdeEffects !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "ROCAppointment === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               }
             },
             {
@@ -440,7 +493,7 @@
                 ]
               },
               "hide": {
-                "hideWhenExpression": "isEmpty(ROCsIdeEffects) || ROCsIdeEffects !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "ROCAppointment === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               }
             }
           ]
@@ -448,442 +501,12 @@
       ]
     },
     {
-      "label": "Complaints and Symptoms",
+      "label": "Community Pharmacy Notes",
       "sections": [
         {
-          "label": "Complaints and History of complaints",
+          "label": "Progress Notes",
           "isExpanded": "true",
           "questions": [
-            {
-              "label": "Patient having complaint(s) today?",
-              "type": "obs",
-              "id": "complaintsToday",
-              "required": "true",
-              "questionOptions": {
-                "concept": "5219AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                "rendering": "radio",
-                "answers": [
-                  {
-                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Yes"
-                  },
-                  {
-                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "No"
-                  }
-                ]
-              },
-              "hide": {
-                "hideWhenExpression": "isEmpty(ROCsIdeEffects) || ROCsIdeEffects !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-              }
-            },
-            {
-              "label": "Presenting complaints",
-              "type": "obsGroup",
-              "id": "ComplaintLodgeByClient",
-              "questionOptions": {
-                "concept": "160531AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                "rendering": "repeating"
-              },
-              "validators": [],
-              "hide": {
-                "hideWhenExpression": "complaintsToday !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-              },
-              "questions": [
-                {
-                  "label": "Complaint",
-                  "type": "obs",
-                  "id": "cOmplaIntField",
-                  "questionOptions": {
-                    "concept": "5219AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "rendering": "select",
-                    "answers": [
-                      {
-                        "concept": "151AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Abdominal pain"
-                      },
-                      {
-                        "concept": "141631AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Abnormal Uterine Bleeding"
-                      },
-                      {
-                        "concept": "121543AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Anxiety"
-                      },
-                      {
-                        "concept": "148035AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Back pain"
-                      },
-                      {
-                        "concept": "840AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Bloody Urine"
-                      },
-                      {
-                        "concept": "117671AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Blood in stool"
-                      },
-                      {
-                        "concept": "131021AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Breast Pain"
-                      },
-                      {
-                        "concept": "120749AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Chest Pain"
-                      },
-                      {
-                        "concept": "871AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Cold and Chills"
-                      },
-                      {
-                        "concept": "120345AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Confusion"
-                      },
-                      {
-                        "concept": "143264AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Cough"
-                      },
-                      {
-                        "concept": "113054AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Convulsions"
-                      },
-                      {
-                        "concept": "144576AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Coma"
-                      },
-                      {
-                        "concept": "106AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Coryza"
-                      },
-                      {
-                        "concept": "143129AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Crying Infant"
-                      },
-                      {
-                        "concept": "119574AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Delirium"
-                      },
-                      {
-                        "concept": "119537AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Depression"
-                      },
-                      {
-                        "concept": "142412AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Diarrhoea"
-                      },
-                      {
-                        "concept": "122496AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Difficult in breathing"
-                      },
-                      {
-                        "concept": "118789AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Difficulty in swallowing"
-                      },
-                      {
-                        "concept": "142247AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Discharge from Penis"
-                      },
-                      {
-                        "concept": "141830AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Dizziness"
-                      },
-                      {
-                        "concept": "141585AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Ear Pain"
-                      },
-                      {
-                        "concept": "141128AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Epigastric Pain"
-                      },
-                      {
-                        "concept": "131040AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Eye Pain"
-                      },
-                      {
-                        "concept": "140941AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Excessive Sweating"
-                      },
-                      {
-                        "concept": "114399AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Facial Pain"
-                      },
-                      {
-                        "concept": "162626AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Fatigue/weakness"
-                      },
-                      {
-                        "concept": "140070AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Flank Pain"
-                      },
-                      {
-                        "concept": "140238AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Fever"
-                      },
-                      {
-                        "concept": "135367AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": " General Body Malaise"
-                      },
-                      {
-                        "concept": "135462AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Genital Ulcer"
-                      },
-                      {
-                        "concept": "139084AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Headache"
-                      },
-                      {
-                        "concept": "117698AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Hearing Loss"
-                      },
-                      {
-                        "concept": "116214AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Hypotension"
-                      },
-                      {
-                        "concept": "879AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Itchiness/Pruritus"
-                      },
-                      {
-                        "concept": "116558AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Joint Pain"
-                      },
-                      {
-                        "concept": "114395AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Leg Pain"
-                      },
-                      {
-                        "concept": "116334AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Lethargy"
-                      },
-                      {
-                        "concept": "135595AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Loss of Appetite"
-                      },
-                      {
-                        "concept": "135488AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Lymphadenopathy"
-                      },
-                      {
-                        "concept": "121657AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Memory Loss"
-                      },
-                      {
-                        "concept": "111721AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Mouth Ulceration"
-                      },
-                      {
-                        "concept": "131015AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Mouth Pain"
-                      },
-                      {
-                        "concept": "133028AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Muscle cramps"
-                      },
-                      {
-                        "concept": "133632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Muscle Pain"
-                      },
-                      {
-                        "concept": "121AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Mylagia"
-                      },
-                      {
-                        "concept": "5978AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Nausea"
-                      },
-                      {
-                        "concept": "133469AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Neck Pain"
-                      },
-                      {
-                        "concept": "133027AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Night sweats"
-                      },
-                      {
-                        "concept": "132653AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Numbness"
-                      },
-                      {
-                        "concept": "162628AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Unexplained bleeding"
-                      },
-                      {
-                        "concept": "125225AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Pain when Swallowing"
-                      },
-                      {
-                        "concept": "131034AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Pelvic Pain"
-                      },
-                      {
-                        "concept": "5953AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Poor Vision"
-                      },
-                      {
-                        "concept": "512AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Rash"
-                      },
-                      {
-                        "concept": "127777AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Red Eye/ Conjuctivitis"
-                      },
-                      {
-                        "concept": "6017AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Refusal to feed"
-                      },
-                      {
-                        "concept": "113224AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Running/Blocked nose"
-                      },
-                      {
-                        "concept": "131032AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Scrotal Pain"
-                      },
-                      {
-                        "concept": "206AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Seizure"
-                      },
-                      {
-                        "concept": "126535AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Shoulder Pain"
-                      },
-                      {
-                        "concept": "112989AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Shock"
-                      },
-                      {
-                        "concept": "158843AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Sore Throat"
-                      },
-                      {
-                        "concept": "141597AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Sleep Disturbance"
-                      },
-                      {
-                        "concept": "125198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Swollen Legs"
-                      },
-                      {
-                        "concept": "112200AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Tremors"
-                      },
-                      {
-                        "concept": "160208AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Urinary Symptoms"
-                      },
-                      {
-                        "concept": "161887AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Watery Diarrhoea"
-                      },
-                      {
-                        "concept": "157498AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Weakness of Limbs"
-                      },
-                      {
-                        "concept": "832AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Weight Loss"
-                      },
-                      {
-                        "concept": "123396AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Vaginal Discharge"
-                      },
-                      {
-                        "concept": "122983AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Vomiting"
-                      },
-                      {
-                        "concept": "111525AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Vertigo"
-                      },
-                      {
-                        "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Other"
-                      }
-                    ]
-                  }
-                },
-                {
-                  "label": "Specify other complaints",
-                  "type": "obs",
-                  "id": "OtherSpecificComplaints",
-                  "questionOptions": {
-                    "concept": "20395601-257c-490c-86c2-acffb627f91f",
-                    "rendering": "textarea"
-                  },
-                  "validators": [],
-                  "hide": {
-                    "hideWhenExpression": "cOmplaIntField !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-                  }
-                },
-                {
-                  "label": "Patient had contact with TB Infected person in the last 12 months?",
-                  "type": "obs",
-                  "id": "contactTB",
-                  "required": "true",
-                  "questionOptions": {
-                    "concept": "124068AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "rendering": "radio",
-                    "answers": [
-                      {
-                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Yes"
-                      },
-                      {
-                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "No"
-                      }
-                    ]
-                  },
-                  "hide": {
-                    "hideWhenExpression": "cOmplaIntField !== '143264AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-                  }
-                },
-                {
-                  "label": "Duration (Days)",
-                  "type": "obs",
-                  "id": "complaint-duration",
-                  "questionOptions": {
-                    "concept": "159368AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "rendering": "number",
-                    "min": "0"
-                  },
-                  "validators": []
-                },
-                {
-                  "label": "Onset Date",
-                  "type": "obs",
-                  "id": "OnSETdate",
-                  "questionOptions": {
-                    "concept": "159948AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "rendering": "date"
-                  },
-                  "validators": [
-                    {
-                      "type": "date",
-                      "allowFutureDates": "false"
-                    }
-                  ]
-                },
-                {
-                  "label": "Onset Status",
-                  "type": "obs",
-                  "id": "onsetStatus",
-                  "questionOptions": {
-                    "concept": "d7a3441d-6aeb-49be-b7d6-b2a3bb39e78d",
-                    "rendering": "select",
-                    "answers": [
-                      {
-                        "concept": "1499AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Gradual"
-                      },
-                      {
-                        "concept": "162707AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Sudden"
-                      }
-                    ]
-                  }
-                }
-              ]
-            },
             {
               "label": "Pharmacist notes",
               "type": "obs",
@@ -892,7 +515,10 @@
                 "concept": "160430AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                 "rendering": "textarea"
               },
-              "validators": [],
+              "alert": {
+                "alertWhenExpression": "ROCAppointment === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'",
+                "message": "Please refer the Recepient of Care back to the Health Facility"
+              },
               "hide": {
                 "hideWhenExpression": ""
               }
@@ -902,5 +528,5 @@
       ]
     }
   ],
-  "encounterType": ""
+  "encounterType": "f0b27e6c-57cd-4dec-ad6b-43eee6e571ee"
 }

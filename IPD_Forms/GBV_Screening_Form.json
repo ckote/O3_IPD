@@ -590,7 +590,7 @@
                 ]
               },
               "hide": {
-                "hideWhenExpression": "(allQuizzesA || allQuizzesB || allQuizzesC || allQuizzesD || allQuizzesE) !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "allQuizzesA !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && allQuizzesB !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && allQuizzesC !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && allQuizzesD !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && allQuizzesE !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               }
             },
             {
@@ -668,7 +668,7 @@
                     "rendering": "text"
                   },
                   "hide": {
-                    "hideWhenExpression": "isEmpty(placeOfHelP) || !arrayContains(['5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], placeOfHelP)"
+                    "hideWhenExpression": "isEmpty(placeOfHelP) || !arrayContains(placeOfHelP, ['5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'])"
                   }
                 },
                 {
@@ -802,7 +802,7 @@
                 "rendering": "text"
               },
               "hide": {
-                "hideWhenExpression": "isEmpty(OutComeHelp) || !arrayContains(['5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], placeOfHelP)"
+                "hideWhenExpression": "isEmpty(OutComeHelp) || !arrayContains(OutComeHelp, ['5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'])"
               }
             },
             {
@@ -872,7 +872,7 @@
                 "rendering": "text"
               },
               "hide": {
-                "hideWhenExpression": "isEmpty(notReporting) || !arrayContains(['5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], notReporting)"
+                "hideWhenExpression": "isEmpty(notReporting) || !arrayContains(notReporting, ['5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'])"
               }
             }
           ]

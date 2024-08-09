@@ -588,13 +588,16 @@
                     "label": "No"
                   }
                 ]
+              },
+              "hide": {
+                "hideWhenExpression": "(allQuizzesA || allQuizzesB || allQuizzesC || allQuizzesD || allQuizzesE) !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               }
             },
             {
               "label": "Action",
               "type": "obsGroup",
               "questionOptions": {
-                "rendering": "repeating",
+                "rendering": "group",
                 "concept": "d79488b7-eb63-49ba-b99c-a52f777a1a7f"
               },
               "id": "ActionTaken",
@@ -651,6 +654,9 @@
                         "label": "Other"
                       }
                     ]
+                  },
+                  "hide": {
+                    "hideWhenExpression": "isEmpty(DidseekHelp) || DidseekHelp !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                   }
                 },
                 {
@@ -693,75 +699,93 @@
                   },
                   {
                     "concept": "bfe0cbb2-eea0-4431-a5c5-d0f49a4ed21b",
-                    "label": "Counselling"
+                    "label": "Counselling",
+                    "disableWhenExpression": "myValue === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                   },
                   {
                     "concept": "160570AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Emergency pills"
+                    "label": "Emergency pills",
+                    "disableWhenExpression": "myValue === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                   },
                   {
                     "concept": "164163AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "HIV Testing"
+                    "label": "HIV Testing",
+                    "disableWhenExpression": "myValue === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                   },
                   {
                     "concept": "0179f241-8c1d-47c1-8128-841f6508e251",
-                    "label": "Investigation done"
+                    "label": "Investigation done",
+                    "disableWhenExpression": "myValue === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                   },
                   {
                     "concept": "334d4b72-26fb-442e-a148-a2cd469f5796",
-                    "label": "Matter presented to court"
+                    "label": "Matter presented to court",
+                    "disableWhenExpression": "myValue === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                   },
                   {
                     "concept": "9eb0698f-4582-4ac6-b276-bf3b625005f2",
-                    "label": "P3 form issued"
+                    "label": "P3 form issued",
+                    "disableWhenExpression": "myValue === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                   },
                   {
                     "concept": "1691AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "PEP given"
+                    "label": "PEP given",
+                    "disableWhenExpression": "myValue === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                   },
                   {
                     "concept": "156761AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Perpetrator arrested"
+                    "label": "Perpetrator arrested",
+                    "disableWhenExpression": "myValue === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                   },
                   {
                     "concept": "165995AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Post rape care"
+                    "label": "Post rape care",
+                    "disableWhenExpression": "myValue === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                   },
                   {
                     "concept": "166536AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "PrEP given"
+                    "label": "PrEP given",
+                    "disableWhenExpression": "myValue === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                   },
                   {
                     "concept": "5618AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Reconciliation"
+                    "label": "Reconciliation",
+                    "disableWhenExpression": "myValue === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                   },
                   {
                     "concept": "163316AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Referred back to the family"
+                    "label": "Referred back to the family",
+                    "disableWhenExpression": "myValue === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                   },
                   {
                     "concept": "1648AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Referred to hospital"
+                    "label": "Referred to hospital",
+                    "disableWhenExpression": "myValue === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                   },
                   {
                     "concept": "161908AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Statement taken"
+                    "label": "Statement taken",
+                    "disableWhenExpression": "myValue === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                   },
                   {
                     "concept": "cfd5aeef-ded4-4375-a2f5-9cc8f39d2e4f",
-                    "label": "STI Prophylaxis"
+                    "label": "STI Prophylaxis",
+                    "disableWhenExpression": "myValue === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                   },
                   {
                     "concept": "163317AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Trauma counselling done"
+                    "label": "Trauma counselling done",
+                    "disableWhenExpression": "myValue === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                   },
                   {
                     "concept": "1185AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Treatment"
+                    "label": "Treatment",
+                    "disableWhenExpression": "myValue === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                   },
                   {
                     "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Other"
+                    "label": "Other",
+                    "disableWhenExpression": "myValue === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                   }
                 ]
               },

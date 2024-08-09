@@ -115,7 +115,7 @@
                   "id": "otheRperPsA",
                   "validators": [],
                   "hide": {
-                    "hideWhenExpression": "isEmpty(perperTratorA) || arrayContains(['163567AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '5620AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], perperTratorA) || !arrayContains(['5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], perperTratorA)"
+                    "hideWhenExpression": "isEmpty(perperTratorA) || arrayContains(perperTratorA, '163567AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '5620AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA') || !arrayContains(perperTratorA, '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
                   }
                 },
                 {
@@ -128,7 +128,7 @@
                   "id": "otheRperPsAA",
                   "validators": [],
                   "hide": {
-                    "hideWhenExpression": "isEmpty(perperTratorAMale) || !arrayContains(['5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '5620AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], perperTratorAMale)"
+                    "hideWhenExpression": "isEmpty(perperTratorAMale) || !arrayContains(perperTratorAMale, '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '5620AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
                   }
                 },
                 {
@@ -223,7 +223,7 @@
                   "id": "otheRperPsB",
                   "validators": [],
                   "hide": {
-                    "hideWhenExpression": "isEmpty(perperTratorB) || !arrayContains(['5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], perperTratorB)"
+                    "hideWhenExpression": "isEmpty(perperTratorB) || !arrayContains(perperTratorB, '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
                   }
                 },
                 {
@@ -236,7 +236,7 @@
                   "id": "otheRperPsBB",
                   "validators": [],
                   "hide": {
-                    "hideWhenExpression": "isEmpty(perperTratorBMale) || !arrayContains(['5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], perperTratorBMale)"
+                    "hideWhenExpression": "isEmpty(perperTratorBMale) || !arrayContains(perperTratorBMale, '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
                   }
                 },
                 {
@@ -331,7 +331,7 @@
                   "id": "otheRperPsC",
                   "validators": [],
                   "hide": {
-                    "hideWhenExpression": "isEmpty(perperTratorC) || !arrayContains(['5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], perperTratorC)"
+                    "hideWhenExpression": "isEmpty(perperTratorC) || !arrayContains(perperTratorC, '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
                   }
                 },
                 {
@@ -344,7 +344,7 @@
                   "id": "otheRperPsCC",
                   "validators": [],
                   "hide": {
-                    "hideWhenExpression": "isEmpty(perperTratorCMale) || !arrayContains(['5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], perperTratorCMale)"
+                    "hideWhenExpression": "isEmpty(perperTratorCMale) || !arrayContains(perperTratorCMale, '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
                   }
                 },
                 {
@@ -439,7 +439,7 @@
                   "id": "otheRperPsD",
                   "validators": [],
                   "hide": {
-                    "hideWhenExpression": "isEmpty(perperTratorD) || !arrayContains(['5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], perperTratorD)"
+                    "hideWhenExpression": "isEmpty(perperTratorD) || !arrayContains(perperTratorD, '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
                   }
                 },
                 {
@@ -452,7 +452,7 @@
                   "id": "otheRperPsDD",
                   "validators": [],
                   "hide": {
-                    "hideWhenExpression": "isEmpty(perperTratorDMale) || !arrayContains(['5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], perperTratorDMale)"
+                    "hideWhenExpression": "isEmpty(perperTratorDMale) || !arrayContains(perperTratorDMale, '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
                   }
                 },
                 {
@@ -547,7 +547,7 @@
                   "id": "otheRperPsEE",
                   "validators": [],
                   "hide": {
-                    "hideWhenExpression": "isEmpty(perperTratorE) || !arrayContains(['5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], perperTratorE)"
+                    "hideWhenExpression": "isEmpty(perperTratorE) || !arrayContains(perperTratorE, '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
                   }
                 },
                 {
@@ -560,7 +560,7 @@
                   "id": "otheRperPsE",
                   "validators": [],
                   "hide": {
-                    "hideWhenExpression": "isEmpty(perperTratorE) || !arrayContains(['5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], perperTratorEMale)"
+                    "hideWhenExpression": "isEmpty(perperTratorE) || !arrayContains(perperTratorEMale, '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
                   }
                 }
               ]

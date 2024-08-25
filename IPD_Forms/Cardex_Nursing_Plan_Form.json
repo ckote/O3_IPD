@@ -59,6 +59,7 @@
               {
                 "label": "Social History Taking",
                 "type": "obsGroup",
+                "id": "SHTaking",
                 "questionOptions": {
                   "rendering": "group",
                   "concept": "160531AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1046,6 +1047,7 @@
               {
                 "label": "Care Plan Details",
                 "type": "obsGroup",
+                "id": "CarePlanDet",
                 "questionOptions": {
                   "rendering": "group",
                   "concept": "160531AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1058,8 +1060,9 @@
                     "questionInfo": "",
 				            "default": "",
 				            "questionOptions": {
-				              "rendering": "select",
-				              "identifierType": "fd57aabc-200a-4fdc-8150-41d1f53e5d9d"
+				              "rendering": "text",
+				              "identifierType": "",
+                      "concept": "164829AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 				              }
                   },
                   {

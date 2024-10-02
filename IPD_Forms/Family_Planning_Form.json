@@ -42,13 +42,78 @@
           ]
         },
         {
-          "label": "Family Planning",
+          "label": "Patient Details",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Visit Type?",
+              "type": "obs",
+              "required": true,
+              "id": "visitType",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "164181AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "CIEL",
+                    "value": "164181"
+                  }
+                ],
+                "answers": [
+                  {
+                    "concept": "164180AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "New visit"
+                  },
+                  {
+                    "concept": "160530AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Return Visit"
+                  },
+                  {
+                    "concept": "160563AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Referrals"
+                  }
+                ]
+              }
+            },
+            {
+              "label": "Visit To:",
+              "type": "obs",
+              "id": "visitTo",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "161643AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "answers": [
+                  {
+                    "concept": "160542AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Outpatient department(OPD)"
+                  },
+                  {
+                    "concept": "167050AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Inpatient department(IPD)"
+                  }
+                ]
+              },
+              "validators": [],
+              "hide": {
+                "hideWhenExpression": "visitType !== '160563AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Patient History",
+      "sections": [
+        {
+          "label": "Family Planning History",
           "isExpanded": "true",
           "questions": [
             {
               "label": "First ever user of contraceptive",
               "type": "obs",
-              "required": true,
+              "required": "true",
               "id": "firstEverUser",
               "questionOptions": {
                 "rendering": "radio",
@@ -116,7 +181,18 @@
               "hide": {
                 "hideWhenExpression": "age < 15"
               }
-            },
+            }
+          ]
+        }
+      ]
+    },
+    { 
+      "label": "Patient Examination",
+      "sections": [
+      {
+        "label": "Patient Examination",
+        "isExpanded": "true",
+        "questions": [
             {
               "label": "Contraceptive dispensed at this visit?",
               "type": "obs",
@@ -211,31 +287,7 @@
               }
             },
             {
-              "label": "Type of visit for method",
-              "type": "obs",
-              "required": true,
-              "id": "typeOfVisitForMethod1",
-              "questionOptions": {
-                "rendering": "select",
-                "concept": "167523AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                "answers": [
-                  {
-                    "concept": "164180AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "New"
-                  },
-                  {
-                    "concept": "164142AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Re-visit"
-                  }
-                ]
-              },
-              "validators": [],
-              "hide": {
-                "hideWhenExpression": "isEmpty(contraceptiveDispensed) || age < 15 || contraceptiveDispensed === '160570AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || contraceptiveDispensed === '1873AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || contraceptiveDispensed === '162422AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || contraceptiveDispensed === '76022AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || contraceptiveDispensed === '162794AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || contraceptiveDispensed === '165464AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || contraceptiveDispensed === '1472AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || contraceptiveDispensed === '1489AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-              }
-            },
-            {
-              "label": "Type of visit for method",
+              "label": "Type of method for this visit",
               "type": "obs",
               "required": true,
               "id": "typeOfVisitForMethod2",
@@ -263,7 +315,7 @@
               },
               "validators": [],
               "hide": {
-                "hideWhenExpression": "isEmpty(contraceptiveDispensed) || age < 15 || sex !== 'F' || contraceptiveDispensed !== '162794AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && contraceptiveDispensed !== '165464AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && contraceptiveDispensed !== '1873AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && contraceptiveDispensed !== '162422AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && contraceptiveDispensed !== '76022AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "isEmpty(visitType) || age < 15 || sex !== 'F' || contraceptiveDispensedF !== '165464AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && contraceptiveDispensedF !== '1873AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && contraceptiveDispensedF !== '162422AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && contraceptiveDispensedF !== '76022AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               }
             },
             {
@@ -359,7 +411,18 @@
               "hide": {
                 "hideWhenExpression": "reasonsForLarcRemoval !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               }
-            },
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Patient's Management",
+      "sections": [
+        {
+          "label": "Patient's Management",
+          "isExpanded": "true",
+          "questions": [
             {
               "label": "Counselled for natural FP?",
               "type": "obs",
@@ -381,7 +444,7 @@
               },
               "validators": [],
               "hide": {
-                "hideWhenExpression": "age < 15"
+                "hideWhenExpression": "age < 15 || sex !== 'F'"
               }
             },
             {
@@ -467,6 +530,18 @@
               "validators": [],
               "hide": {
                 "hideWhenExpression": "age < 15"
+              }
+            },
+            {
+              "label": "Clinical notes",
+              "type": "obs",
+              "id": "cLinIcNotes",
+              "questionOptions": {
+                "concept": "160981AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "rendering": "textarea"
+              },
+              "hide": {
+                "hideWhenExpression": ""
               }
             },
             {

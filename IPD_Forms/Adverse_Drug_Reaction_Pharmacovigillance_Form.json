@@ -3,7 +3,7 @@
     "description": "Adverse Drug Reaction Reporting Form",
     "version": "1",
     "published": true,
-    "uuid": "57de9ea3-1128-4b75-9ecd-25c7af941e52",
+    "uuid": "461e1b45-b3f2-4899-b3e9-d3b110b6ed9c",
     "retired": false,
     "encounter": "ADR",
     "pages": [
@@ -406,6 +406,18 @@
                   }
                 },
                 {
+                  "label": "Generic Name",
+                  "type": "obs",
+                  "id": "nAmeOfGen",
+                  "questionOptions": {
+                    "concept": "844bf107-32e6-4d5d-8d40-de8978f79cb3",
+                    "rendering": "text"
+                  },
+                  "hide": {
+                    "hideWhenExpression": "AdverseReactions !== 'true'"
+                  }
+                },
+                {
                   "label": "Brand Name",
                   "type": "obs",
                   "id": "nAmeOfBrand",
@@ -432,13 +444,13 @@
                 {
                   "label": "Dosage",
                   "type": "obs",
-                  "id": "dose",
+                  "id": "doseEffect",
                   "questionOptions": {
                     "concept": "1443AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "rendering": "number"
                   },
                   "hide": {
-                    "hideWhenExpression": "isEmpty(AdVerseMed) || AdVerseMed !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                    "hideWhenExpression": "isEmpty(AdVerseMed)"
                   }
                 },
                 {
@@ -701,41 +713,78 @@
                 {
                   "label": "Action taken",
                   "type": "obs",
-                  "id": "ActIonTakenMeds",
+                  "id": "ActIonTakenPP",
                   "questionOptions": {
-                    "concept": "1261AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "concept": "1255AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "rendering": "select",
                     "answers": [
                       {
-                        "concept": "1259AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Switched Regimen"
-                      },
-                      {
                         "concept": "1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Stop"
+                        "label": "Drug Withdrawn"
                       },
                       {
                         "concept": "1257AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Continue Regimen"
+                        "label": "Dose Increased"
+                      },
+                      {
+                        "concept": "1259AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Dose Reduced"
                       },
                       {
                         "concept": "1258AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Substituted Drug"
-                      },
-                      {
-                        "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "None"
+                        "label": "Drug Changed"
                       },
                       {
                         "concept": "981AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Changed Dose"
+                        "label": "Dose Changed"
+                      },
+                      {
+                        "concept": "166188AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Dose not changed"
+                      },
+                      {
+                        "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Unknown"
                       },
                       {
                         "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Other"
+                        "label": "Not Applicable"
                       }
                     ]
+                  },
+                  "hide": {
+                    "hideWhenExpression": "isEmpty(sEReaCtion) || sEReaCtion !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                   }
+                },
+                {
+                  "label": "Treatment start date:",
+                  "type": "obs",
+                  "id": "firstTreatment",
+                  "questionOptions": {
+                    "concept": "163526AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "rendering": "date"
+                  },
+                  "validators": [
+                    {
+                      "type": "date",
+                      "allowFutureDates": "false"
+                    }
+                  ]
+                },
+                {
+                  "label": "Treatment end date:",
+                  "type": "obs",
+                  "id": "lastTreatment",
+                  "questionOptions": {
+                    "concept": "164384AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "rendering": "date"
+                  },
+                  "validators": [
+                    {
+                      "type": "date",
+                      "allowFutureDates": "false"
+                    }
+                  ]
                 }
               ]
             }
@@ -846,37 +895,6 @@
           "isExpanded": "true",
           "questions": [
             {
-              "label": "Severity of reaction",
-              "type": "obs",
-              "id": "seVERity",
-              "questionOptions": {
-                "concept": "162760AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                "rendering": "select",
-                "answers": [
-                  {
-                    "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Unknown"
-                  },
-                  {
-                    "concept": "162819AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Fatal"
-                  },
-                  {
-                    "concept": "1499AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Moderate"
-                  },
-                  {
-                    "concept": "1500AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Severe"
-                  },
-                  {
-                    "concept": "1498AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Mild"
-                  }
-                ]
-              }
-            },
-            {
               "label": "Is the reaction serious?",
               "type": "obs",
               "id": "sEReaCtion",
@@ -922,52 +940,6 @@
                   {
                     "concept": "9c348c8c-e033-4fc0-ab2a-7e6702b68739",
                     "label": "Death"
-                  }
-                ]
-              },
-              "hide": {
-                "hideWhenExpression": "isEmpty(sEReaCtion) || sEReaCtion !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-              }
-            },
-            {
-              "label": "Action taken",
-              "type": "obs",
-              "id": "ActIonTakenPP",
-              "questionOptions": {
-                "concept": "1255AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                "rendering": "select",
-                "answers": [
-                  {
-                    "concept": "1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Drug Withdrawn"
-                  },
-                  {
-                    "concept": "1257AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Dose Increased"
-                  },
-                  {
-                    "concept": "1259AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Dose Reduced"
-                  },
-                  {
-                    "concept": "1258AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Drug Changed"
-                  },
-                  {
-                    "concept": "981AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Dose Changed"
-                  },
-                  {
-                    "concept": "166188AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Dose not changed"
-                  },
-                  {
-                    "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Unknown"
-                  },
-                  {
-                    "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Not Applicable"
                   }
                 ]
               },
@@ -1161,5 +1133,5 @@
       ]
     }
   ],
-    "encounterType": "e87aa2ad-6886-422e-9dfd-064e3bfe3aad"
+    "encounterType": "7a185fe4-c56f-4195-b682-d3f5afa9d9c2"
   }

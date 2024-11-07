@@ -932,7 +932,7 @@
                 "type": "obs",
                 "id": "actionTaKen",
                 "questionOptions": {
-                  "concept": "1282AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                  "concept": "1282AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                   "rendering": "radio",
                   "answers": [
                     {

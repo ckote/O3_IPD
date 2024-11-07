@@ -333,7 +333,7 @@
                   "questionOptions": {
                     "rendering": "number",
                     "min": "0",
-                    "max": "20",
+                    "max": "10",
                     "concept": "162261AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "conceptMappings": [
                       {
@@ -453,7 +453,9 @@
                   "id": "frequency",
                   "questionOptions": {
                     "concept": "166529AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "rendering": "number"
+                    "rendering": "number",
+                    "min": "0",
+                    "max": "10"
                   }
                 },
                 {
@@ -505,7 +507,7 @@
               "type": "obs",
               "id": "actionTaKen",
               "questionOptions": {
-                "concept": "1282AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "concept": "1282AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                 "rendering": "radio",
                 "answers": [
                   {
